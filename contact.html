@@ -93,6 +93,18 @@
   }
   .submit-btn:hover { background: #333; }
 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .page-body { grid-template-columns: 1fr; }
+    .left-panel { padding: 48px 24px; }
+    .left-heading { font-size: 32px; }
+    .right-panel { padding: 48px 24px; }
+    .field-row { grid-template-columns: 1fr; }
+    .site-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+
   /* Success state */
   .success { display: none; text-align: center; padding: 60px 0; }
   .success.visible { display: block; }
@@ -115,12 +127,12 @@
 
 <header class="site-header">
   <div>
-    <a href="ui_kits/website/index.html" class="wordmark">Michelle Wright</a>
+    <a href="index.html" class="wordmark">Michelle Wright</a>
     <div class="wordmark-sub">Fractional CPO</div>
   </div>
   <nav class="nav-links">
-    <a href="ui_kits/website/index.html" class="nav-link">Services</a>
-    <a href="ui_kits/website/index.html" class="nav-link">About</a>
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="index.html#about" class="nav-link">About</a>
     <a href="writing/index.html" class="nav-link">Writing</a>
   </nav>
 </header>
