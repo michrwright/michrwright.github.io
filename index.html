@@ -101,6 +101,18 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .svc-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 3px 9px; background: rgba(91,99,53,0.2); color: var(--olive-light); border-radius: 2px; }
 
+/* ── FIRST 90 DAYS ── */
+.ninety { background: var(--cream-mid); padding: 96px 52px; }
+.ninety-inner { max-width: 1100px; margin: 0 auto; }
+.ninety-header { margin-bottom: 56px; }
+.ninety-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); margin-top: 14px; }
+.ninety-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.ninety-col-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); margin-bottom: 24px; }
+.ninety-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+.ninety-list li { font-size: 15px; font-weight: 300; color: #3A3835; line-height: 1.7; padding: 14px 0; border-bottom: 1px solid var(--cream-dark); }
+.ninety-list li:first-child { border-top: 1px solid var(--cream-dark); }
+.ninety-outcomes li { color: var(--charcoal); font-weight: 400; }
+
 /* ── ABOUT ── */
 .about { background: var(--charcoal); padding: 96px 52px; }
 .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
@@ -183,6 +195,14 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .services-h2 { font-size: 32px; }
   .services-grid { grid-template-columns: 1fr; }
   .svc { padding: 36px 24px; }
+
+  /* Services — force single col on mobile regardless of inline style */
+  .services-grid { grid-template-columns: 1fr !important; }
+
+  /* First 90 days */
+  .ninety { padding: 64px 24px; }
+  .ninety-h2 { font-size: 32px; }
+  .ninety-cols { grid-template-columns: 1fr; gap: 40px; }
 
   /* About */
   .about { padding: 64px 24px; }
@@ -286,7 +306,7 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
     </div>
     <a href="contact.html" class="btn btn-olive">Work with me</a>
   </div>
-  <div class="services-grid">
+  <div class="services-grid" style="grid-template-columns:repeat(3,1fr);">
     <div class="svc fade-in">
       <div class="svc-num">01</div>
       <div class="svc-title">Product roadmap & vision</div>
@@ -305,11 +325,37 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
       <div class="svc-body">Build a product function that scales. From defining roles to conducting interviews to onboarding your first PM.</div>
       <div class="svc-tags"><span class="svc-tag">Hiring</span><span class="svc-tag">Org design</span><span class="svc-tag">Onboarding</span></div>
     </div>
-    <div class="svc fade-in">
-      <div class="svc-num">04</div>
-      <div class="svc-title">First 90 days</div>
-      <div class="svc-body">Shared view of what creates value. Clear priorities with explicit trade-offs. Roadmap reset around ARR, churn and cost. Product that is easier to sell.</div>
-      <div class="svc-tags"><span class="svc-tag">Diagnosis</span><span class="svc-tag">Prioritisation</span><span class="svc-tag">Outcomes</span></div>
+  </div>
+</section>
+
+<!-- FIRST 90 DAYS -->
+<section class="ninety" id="ninety">
+  <div class="ninety-inner">
+    <div class="fade-in ninety-header">
+      <div class="eyebrow">How I work</div>
+      <h2 class="ninety-h2">What changes in the first 90 days.</h2>
+    </div>
+    <div class="ninety-cols fade-in">
+      <div class="ninety-col">
+        <div class="ninety-col-label">Changes</div>
+        <ul class="ninety-list">
+          <li>Leadership has a shared, evidence-based view of what is creating value and what is not.</li>
+          <li>Clear product priorities are agreed, including explicit decisions on what will not be pursued.</li>
+          <li>A small number of outcomes are defined and tied directly to ARR, churn reduction, adoption or cost efficiency.</li>
+          <li>The roadmap is reset around those outcomes, with real trade-offs.</li>
+          <li>The product is materially easier to explain and sell to regulated customers and investors.</li>
+          <li>Delivery focus tightens, waste is reduced and execution risk is visibly lowered.</li>
+        </ul>
+      </div>
+      <div class="ninety-col">
+        <div class="ninety-col-label">Typical outcomes</div>
+        <ul class="ninety-list ninety-outcomes">
+          <li>Roadmaps reset around ARR, adoption, churn or cost levers rather than features.</li>
+          <li>Products that are materially easier to sell to regulated customers.</li>
+          <li>Delivery organisations simplified, focused and able to scale without scaling cost.</li>
+          <li>Improved investor and board confidence through reduced execution risk.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
