@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get in touch — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+  body { background: #EDE9E0; color: #2E2E2E; font-family: 'Nunito', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+
+  .site-header {
+    padding: 22px 48px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .wordmark { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 17px; color: #2E2E2E; letter-spacing: -0.01em; text-decoration: none; display: block; }
+  .wordmark-sub { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5B6335; margin-top: 3px; font-family: 'DM Sans', sans-serif; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-link { font-size: 13px; color: #2E2E2E; text-decoration: none; font-family: 'DM Sans', sans-serif; }
+  .nav-link:hover { color: #5B6335; }
+
+  /* Layout — two col */
+  .page-body { display: grid; grid-template-columns: 1fr 1fr; flex: 1; }
+
+  /* Left — statement */
+  .left-panel {
+    background: #2E2E2E;
+    padding: 80px 64px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .left-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #5B6335; margin-bottom: 24px;
+  }
+  .left-heading {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 44px; font-weight: 400; line-height: 1.1;
+    letter-spacing: -0.02em; color: #EDE9E0;
+    text-wrap: pretty; margin-bottom: 24px;
+  }
+  .left-body {
+    font-size: 16px; font-weight: 300; line-height: 1.7;
+    color: rgba(237,233,224,0.65); max-width: 380px; text-wrap: pretty;
+  }
+  .left-details { margin-top: 56px; }
+  .detail-item { margin-bottom: 24px; }
+  .detail-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #5B6335; margin-bottom: 4px;
+  }
+  .detail-value { font-size: 15px; font-weight: 300; color: rgba(237,233,224,0.75); }
+  .detail-value a { color: rgba(237,233,224,0.75); text-decoration: none; }
+  .detail-value a:hover { color: #EDE9E0; }
+
+  /* Right — form */
+  .right-panel { padding: 80px 64px; }
+  .form-heading {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px; font-weight: 400; color: #2E2E2E;
+    margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .form-sub { font-size: 14px; color: #8C8C8C; margin-bottom: 40px; font-weight: 300; }
+
+  .form { display: flex; flex-direction: column; gap: 20px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: #2E2E2E; letter-spacing: 0.02em; }
+  input, select, textarea {
+    font-family: 'Nunito', sans-serif; font-weight: 300;
+    font-size: 15px; background: #FAFAF8;
+    border: 1px solid #D9D4C8; border-radius: 2px;
+    padding: 11px 14px; color: #2E2E2E; outline: none;
+    transition: border-color 150ms ease;
+    appearance: none;
+  }
+  input::placeholder, textarea::placeholder { color: #C0BBB0; }
+  input:focus, select:focus, textarea:focus { border-color: #5B6335; }
+  textarea { resize: none; line-height: 1.6; }
+
+  .submit-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+    background: #2E2E2E; color: #EDE9E0;
+    border: none; border-radius: 2px;
+    padding: 13px 28px; cursor: pointer;
+    transition: background 150ms ease;
+    align-self: flex-start;
+  }
+  .submit-btn:hover { background: #333; }
+
+  /* Success state */
+  .success { display: none; text-align: center; padding: 60px 0; }
+  .success.visible { display: block; }
+  .success-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 36px; color: #2E2E2E; margin-bottom: 12px;
+  }
+  .success-body { font-size: 16px; color: #8C8C8C; font-weight: 300; }
+
+  .site-footer {
+    border-top: 1px solid #D9D4C8;
+    padding: 24px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-shrink: 0;
+  }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <a href="ui_kits/website/index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav class="nav-links">
+    <a href="ui_kits/website/index.html" class="nav-link">Services</a>
+    <a href="ui_kits/website/index.html" class="nav-link">About</a>
+    <a href="writing/index.html" class="nav-link">Writing</a>
+  </nav>
+</header>
+
+<div class="page-body">
+
+  <!-- Left -->
+  <div class="left-panel">
+    <div>
+      <div class="left-eyebrow">Get in touch</div>
+      <h1 class="left-heading">Let's talk about your product.</h1>
+      <p class="left-body">If your product is technically strong but struggling to drive revenue or land with regulated buyers — that's the conversation I have most. Happy to start there.</p>
+    </div>
+    <div class="left-details">
+      <div class="detail-item">
+        <div class="detail-label">Email</div>
+        <div class="detail-value"><a href="mailto:michrwright@gmail.com">michrwright@gmail.com</a></div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Response time</div>
+        <div class="detail-value">Within two working days</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Based in</div>
+        <div class="detail-value">London · Works internationally</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Availability</div>
+        <div class="detail-value">Open to new mandates</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="right-panel">
+    <div id="form-wrap">
+      <h2 class="form-heading">Send a message</h2>
+      <p class="form-sub">Tell me about your product challenge and what you're looking for.</p>
+
+      <div class="form">
+        <div class="field-row">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="field"><label>Company</label><input type="text" placeholder="Company name"></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" placeholder="hello@yourcompany.com"></div>
+        <div class="field">
+          <label>What are you looking for?</label>
+          <select>
+            <option value="" disabled selected>Select an option</option>
+            <option>Fractional CPO (2–3 days/week)</option>
+            <option>Strategic advisory</option>
+            <option>Interim CPO cover</option>
+            <option>One-off project or workshop</option>
+            <option>Not sure yet — happy to talk</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tell me about your challenge</label>
+          <textarea rows="5" placeholder="What's the product problem you're trying to solve? Where are you in your journey?"></textarea>
+        </div>
+        <button class="submit-btn" onclick="showSuccess(event)">Send message</button>
+      </div>
+    </div>
+
+    <div class="success" id="success">
+      <div class="success-title">Thank you.</div>
+      <div class="success-body">I'll be in touch within two working days.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+</footer>
+
+<script>
+function showSuccess(e) {
+  e.preventDefault();
+  document.getElementById('form-wrap').style.display = 'none';
+  document.getElementById('success').classList.add('visible');
+}
+</script>
+</body>
+</html>

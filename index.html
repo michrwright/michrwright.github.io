@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michelle Wright — Fractional CPO · Regulated FinTech</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: #EDE9E0; color: #1A1A1A; font-family: 'Nunito', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --cream: #EDE9E0;
+  --charcoal: #2E2E2E;        /* warm dark grey — replaces near-black */
+  --charcoal-mid: #3D3D3D;    /* slightly lighter charcoal for hover/cards */
+  --olive: #5B6335;
+  --olive-light: #7A8545;
+  --olive-muted: #E8EBDB;
+  --olive-dark: #464D27;
+  --cream-dark: #D9D4C8;
+  --cream-mid: #F5F2EC;
+  --white: #FAFAF8;
+  --mid-grey: #8C8C8C;
+  --serif: Baskerville, 'Baskerville Old Face', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --body: 'Nunito', sans-serif;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 52px;
+  background: rgba(237,233,224,0.97);
+  border-bottom: 1px solid var(--cream-dark);
+  backdrop-filter: blur(8px);
+}
+.nav-wordmark { font-family: var(--serif); font-size: 17px; color: var(--charcoal); letter-spacing: -0.01em; text-decoration: none; display: block; }
+.nav-sub { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); margin-top: 2px; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-family: var(--sans); font-size: 13px; color: var(--charcoal); text-decoration: none; transition: color 150ms ease; }
+.nav-links a:hover { color: var(--olive); }
+.nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--charcoal); color: var(--cream); padding: 10px 20px; border-radius: 2px; text-decoration: none !important; transition: background 150ms ease; }
+.nav-cta:hover { background: var(--charcoal-mid); color: var(--cream) !important; }
+
+/* ── SHARED ── */
+.btn { font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 13px 26px; border-radius: 2px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 150ms ease; border: 1px solid transparent; cursor: pointer; }
+.btn-cream    { background: var(--cream); color: var(--charcoal); }
+.btn-cream:hover { background: #fff; }
+.btn-ghost    { background: transparent; color: var(--cream); border-color: rgba(255,255,255,0.3); }
+.btn-ghost:hover { background: rgba(255,255,255,0.08); }
+.btn-primary  { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
+.btn-primary:hover { background: var(--charcoal-mid); }
+.btn-olive    { background: var(--olive); color: var(--white); }
+.btn-olive:hover { background: var(--olive-light); }
+.btn-outline  { background: transparent; color: var(--charcoal); border-color: var(--charcoal); }
+.btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+.eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--olive); margin-bottom: 14px; }
+.inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
+
+/* ── HERO ── */
+.hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: #1E1E1E; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&q=85&fit=crop&fm=jpg');
+  background-size: cover; background-position: center 30%;
+  filter: grayscale(100%) brightness(0.22) contrast(1.1);
+  transform: scale(1.03);
+}
+.hero-content { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; width: 100%; padding: 0 52px 88px; }
+.hero-eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--olive-light); margin-bottom: 24px; }
+h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-height: 1.03; letter-spacing: -0.025em; color: var(--cream); max-width: 800px; margin-bottom: 32px; }
+.hero-sub { font-size: 18px; font-weight: 300; line-height: 1.65; color: rgba(237,233,224,0.65); max-width: 480px; margin-bottom: 48px; }
+.hero-ctas { display: flex; gap: 14px; align-items: center; }
+.hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(255,255,255,0.08); }
+.hero-stat { padding: 28px 52px; border-right: 1px solid rgba(255,255,255,0.07); }
+.hero-stat:last-child { border-right: none; }
+.stat-num { font-family: var(--serif); font-size: 36px; color: var(--cream); line-height: 1; margin-bottom: 5px; }
+.stat-label { font-family: var(--sans); font-size: 12px; color: rgba(237,233,224,0.4); }
+
+/* ── INTRO ── */
+.intro { background: var(--cream); padding: 96px 52px; }
+.intro-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+.intro-quote { font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.38; color: var(--charcoal); letter-spacing: -0.01em; }
+.intro-quote em { font-style: italic; color: var(--olive); }
+.intro-divider { width: 36px; height: 2px; background: var(--olive); margin-bottom: 24px; }
+.intro-body p { font-size: 16px; font-weight: 300; line-height: 1.75; color: #3A3835; margin-bottom: 18px; }
+
+/* ── SERVICES ── */
+.services { background: var(--charcoal); padding: 96px 0; }
+.services-header { max-width: 1100px; margin: 0 auto 56px; padding: 0 52px; display: flex; justify-content: space-between; align-items: flex-end; }
+.services-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); }
+.services-h2 .eyebrow { color: var(--olive-light); }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.05); }
+.svc { background: var(--charcoal); padding: 44px 40px 48px; transition: background 200ms ease; }
+.svc:hover { background: var(--charcoal-mid); }
+.svc-num { font-family: var(--sans); font-size: 11px; color: var(--olive-light); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 32px; }
+.svc-title { font-family: var(--serif); font-size: 21px; color: var(--cream); line-height: 1.2; margin-bottom: 14px; }
+.svc-body { font-size: 14px; font-weight: 300; color: rgba(237,233,224,0.52); line-height: 1.7; margin-bottom: 24px; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.svc-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 3px 9px; background: rgba(91,99,53,0.2); color: var(--olive-light); border-radius: 2px; }
+
+/* ── ABOUT ── */
+.about { background: var(--charcoal); padding: 96px 52px; }
+.about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; }
+.about-img { aspect-ratio: 3/4; overflow: hidden; border-radius: 2px; background: #1a1a1a; }
+.about-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.08) brightness(0.9); }
+.about-eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--olive-light); margin-bottom: 16px; }
+.about-h2 { font-family: var(--serif); font-size: 38px; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 24px; }
+.about-body { font-size: 16px; font-weight: 300; line-height: 1.75; color: rgba(237,233,224,0.75); margin-bottom: 16px; }
+.creds { margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.12); }
+.cred-row { display: flex; gap: 20px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.cred-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(237,233,224,0.4); min-width: 100px; flex-shrink: 0; }
+.cred-val { font-size: 14px; font-weight: 300; color: rgba(237,233,224,0.8); }
+
+/* ── WRITING ── */
+.writing { background: var(--cream-mid); padding: 96px 52px; }
+.writing-inner { max-width: 1100px; margin: 0 auto; }
+.writing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
+.writing-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); }
+.essay-list { display: flex; flex-direction: column; }
+.essay { display: grid; grid-template-columns: 72px 1fr auto; gap: 0 40px; padding: 36px 0; border-bottom: 1px solid var(--cream-dark); text-decoration: none; color: inherit; }
+.essay:first-child { border-top: 1px solid var(--cream-dark); }
+.essay:hover .essay-title { color: var(--olive); }
+.essay-date { font-family: var(--sans); font-size: 11px; color: var(--mid-grey); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 4px; }
+.essay-title { font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 10px; transition: color 200ms ease; }
+.essay-excerpt { font-size: 14px; font-weight: 300; color: var(--mid-grey); line-height: 1.6; }
+.essay-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 4px 10px; background: var(--olive-muted); color: var(--olive-dark); border-radius: 2px; white-space: nowrap; align-self: start; margin-top: 4px; }
+
+/* ── TESTIMONIAL ── */
+.testimonial { background: var(--charcoal); padding: 88px 52px; text-align: center; }
+.t-quote { font-family: var(--serif); font-size: 32px; font-style: italic; font-weight: 400; line-height: 1.5; color: var(--cream); max-width: 740px; margin: 0 auto 28px; }
+.t-attr { font-family: var(--sans); font-size: 13px; color: rgba(237,233,224,0.4); }
+
+/* ── CTA ── */
+.cta { background: var(--olive-muted); padding: 96px 52px; text-align: center; }
+.cta-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); margin-bottom: 16px; }
+.cta-sub { font-size: 16px; font-weight: 300; color: var(--mid-grey); margin-bottom: 40px; }
+
+/* ── FOOTER ── */
+.footer { background: var(--charcoal); padding: 56px 52px 40px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; margin-bottom: 48px; }
+.footer-wordmark { font-family: var(--serif); font-size: 19px; color: var(--cream); margin-bottom: 4px; }
+.footer-olive { width: 28px; height: 1px; background: var(--olive); margin: 10px 0; }
+.footer-sub { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); }
+.footer-tagline { font-size: 13px; font-weight: 300; color: rgba(237,233,224,0.35); max-width: 300px; line-height: 1.6; margin-top: 18px; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.footer-link { font-family: var(--sans); font-size: 13px; color: rgba(237,233,224,0.5); text-decoration: none; transition: color 150ms; }
+.footer-link:hover { color: var(--cream); }
+.footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; }
+.footer-copy { font-family: var(--sans); font-size: 12px; color: rgba(237,233,224,0.22); }
+
+/* ── FADE IN ── */
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
+.fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div>
+    <span class="nav-wordmark">Michelle Wright</span>
+    <span class="nav-sub">Fractional CPO</span>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="writing/index.html">Writing</a>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Fractional CPO</div>
+    <h1 class="hero-h1">Your technology is strong.<br>Your product is hard to sell.</h1>
+    <p class="hero-sub">I work with PE-backed and founder-led businesses in regulated financial services — closing the gap between strong technology and commercial traction.</p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn btn-cream">Work with me</a>
+      <a href="#services" class="btn btn-ghost">See how I work</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="stat-num">20+</div><div class="stat-label">Years in product</div></div>
+    <div class="hero-stat"><div class="stat-num">$50M</div><div class="stat-label">Revenue delivered at HSBC</div></div>
+    <div class="hero-stat"><div class="stat-num">24</div><div class="stat-label">Markets scaled at HSBC</div></div>
+    <div class="hero-stat"><div class="stat-num">$160M</div><div class="stat-label">Market opportunity opened</div></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="fade-in intro-quote">"Somewhere between product and commercial outcomes, the connection has broken — the CRO has quietly stopped trusting the roadmap and the exec team knows something is wrong but <em>can't agree on what.</em>"</div>
+    <div class="fade-in">
+      <div class="intro-divider"></div>
+      <div class="intro-body">
+        <p>I diagnose fast. Whether it's a prioritisation problem, a commercial clarity problem, a structural one — or something the leadership team hasn't been able to name yet.</p>
+        <p>Then I land the decisions and reset product around the levers that actually matter: revenue, churn, and cost efficiency. Without the overhead of a full-time executive hire.</p>
+        <div style="margin-top:8px;"><a href="#about" class="btn btn-outline" style="font-size:13px;padding:10px 20px;">About me</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="eyebrow" style="color:var(--olive-light);">What I do</div>
+      <div class="services-h2">Three things I fix.<br>All of them commercial.</div>
+    </div>
+    <a href="contact.html" class="btn btn-olive">Work with me</a>
+  </div>
+  <div class="services-grid">
+    <div class="svc fade-in">
+      <div class="svc-num">01</div>
+      <div class="svc-title">Product roadmap & vision</div>
+      <div class="svc-body">Align your leadership team around a clear product north star — what to build, why, and in what order.</div>
+      <div class="svc-tags"><span class="svc-tag">Roadmapping</span><span class="svc-tag">OKRs</span><span class="svc-tag">Prioritisation</span></div>
+    </div>
+    <div class="svc fade-in">
+      <div class="svc-num">02</div>
+      <div class="svc-title">Product-led growth and cost discipline</div>
+      <div class="svc-body">Reset feature-driven roadmaps into outcome-led portfolios. Link product investment directly to ARR, churn reduction, adoption or operating leverage.</div>
+      <div class="svc-tags"><span class="svc-tag">ARR focus</span><span class="svc-tag">Churn</span><span class="svc-tag">Roadmap reset</span></div>
+    </div>
+    <div class="svc fade-in">
+      <div class="svc-num">03</div>
+      <div class="svc-title">Hiring & team design</div>
+      <div class="svc-body">Build a product function that scales. From defining roles to conducting interviews to onboarding your first PM.</div>
+      <div class="svc-tags"><span class="svc-tag">Hiring</span><span class="svc-tag">Org design</span><span class="svc-tag">Onboarding</span></div>
+    </div>
+    <div class="svc fade-in">
+      <div class="svc-num">04</div>
+      <div class="svc-title">First 90 days</div>
+      <div class="svc-body">Shared view of what creates value. Clear priorities with explicit trade-offs. Roadmap reset around ARR, churn and cost. Product that is easier to sell.</div>
+      <div class="svc-tags"><span class="svc-tag">Diagnosis</span><span class="svc-tag">Prioritisation</span><span class="svc-tag">Outcomes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img fade-in">
+      <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div class="fade-in">
+      <div class="about-eyebrow">About Michelle</div>
+      <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
+      <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
+      <p class="about-body">I've scaled platforms from 8 users to 8,000 across 24 markets, delivered $50M in revenue in two months, and opened a $160M market opportunity with a team of four.</p>
+      <p class="about-body">Now I work fractionally — bringing that experience into regulated businesses where product isn't yet driving the commercial outcomes it should. I work directly with CEOs and boards. I diagnose fast and don't do unnecessary process.</p>
+      <div class="creds">
+        <div class="cred-row"><span class="cred-label">Experience</span><span class="cred-val">20+ years · HSBC, LSEG, Barclays, RBS</span></div>
+        <div class="cred-row"><span class="cred-label">Sector</span><span class="cred-val">Banking · Payments · Insurance · Asset management</span></div>
+        <div class="cred-row"><span class="cred-label">Sweet spot</span><span class="cred-val">PE-backed or founder-led · £5m+ ARR · Regulated</span></div>
+        <div class="cred-row"><span class="cred-label">Education</span><span class="cred-val">BSc Finance Honours · University of Cape Town</span></div>
+      </div>
+      <div style="margin-top:36px;"><a href="contact.html" class="btn btn-cream">Work with me</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing">
+  <div class="writing-inner">
+    <div class="writing-header fade-in">
+      <div>
+        <div class="eyebrow">Writing</div>
+        <div class="writing-h2">Thinking out loud,<br>in public.</div>
+      </div>
+      <a href="writing/index.html" class="btn btn-outline" style="font-size:13px;padding:10px 20px;">All essays</a>
+    </div>
+    <div class="essay-list">
+      <a href="writing/factory-essay.html" class="essay fade-in">
+        <div class="essay-date">Apr 2026</div>
+        <div>
+          <div class="essay-title">We swapped the motor but nobody redesigned the factory</div>
+          <div class="essay-excerpt">93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build.</div>
+        </div>
+        <span class="essay-tag">AI &amp; Product</span>
+      </a>
+      <div class="essay" style="opacity:0.35;pointer-events:none;">
+        <div class="essay-date">Soon</div>
+        <div><div class="essay-title" style="font-style:italic;color:var(--mid-grey);">Your next essay</div></div>
+        <span class="essay-tag">Coming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="t-quote">"Michelle doesn't just diagnose the problem — she lands the decisions that everyone else has been avoiding. That's rare at any level."</div>
+  <div class="t-attr">CEO · PE-backed B2B FinTech · London</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="eyebrow fade-in" style="text-align:center;">Ready to talk?</div>
+  <div class="cta-h2 fade-in">If product is where your growth thesis is getting stuck.</div>
+  <p class="cta-sub fade-in">I work directly with CEOs and boards. If you're in regulated financial services and product isn't driving the outcomes it should, I'm easy to reach.</p>
+  <a href="contact.html" class="btn btn-primary" style="font-size:15px;padding:14px 32px;">Get in touch</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark">Michelle Wright</div>
+      <div class="footer-olive"></div>
+      <div class="footer-sub">Fractional CPO</div>
+      <div class="footer-tagline">Senior product leadership for startups that need the right thinking at the right moment.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services" class="footer-link">Services</a>
+      <a href="#about" class="footer-link">About</a>
+      <a href="writing/index.html" class="footer-link">Writing</a>
+      <a href="contact.html" class="footer-link">Get in touch</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+    <span class="footer-copy">michrwright@gmail.com</span>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

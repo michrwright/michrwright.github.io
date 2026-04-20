@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>We swapped the motor but nobody redesigned the factory — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+  body {
+    background: #EDE9E0;
+    color: #2E2E2E;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .site-header, .header-link, .meta-tag, .meta-date, .article-body h3,
+  .function-block h3, .byline-role, .footer-copy, .footer-cta,
+  .article-lead-sub, .pull-stat-label, .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+  .site-header {
+    padding: 22px 48px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark-sub {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin-top: 3px;
+  }
+  .header-link {
+    font-size: 13px;
+    color: #8C8C8C;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .header-link:hover { color: #2E2E2E; }
+
+  /* ── Article layout ──────────────────────────────── */
+  .article-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+  }
+
+  /* Meta */
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .meta-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    background: #E8EBDB;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .meta-date {
+    font-size: 12px;
+    color: #8C8C8C;
+  }
+
+  /* Title */
+  h1.article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #2E2E2E;
+    margin-bottom: 32px;
+    text-wrap: pretty;
+  }
+
+  /* Lead */
+  .article-lead {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: 'Nunito', sans-serif;
+    color: #2E2E2E;
+    margin-bottom: 20px;
+    text-wrap: pretty;
+  }
+  .article-lead-sub {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #8C8C8C;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+
+  /* Divider rule */
+  .rule {
+    border: none;
+    border-top: 1px solid #D9D4C8;
+    margin: 48px 0;
+  }
+  .rule-olive {
+    border: none;
+    border-top: 2px solid #5B6335;
+    width: 40px;
+    margin: 48px 0;
+  }
+
+  /* Body copy */
+  .article-body p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #2E2E2E;
+    margin-bottom: 24px;
+    text-wrap: pretty;
+  }
+
+  /* Section headings */
+  .article-body h2 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2E2E2E;
+    margin: 56px 0 20px;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+
+  /* Sub-section headings (bold inline) */
+  .article-body h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 40px 0 12px;
+  }
+
+  /* Pull stat */
+  .pull-stat {
+    border-left: 2px solid #5B6335;
+    padding: 4px 0 4px 24px;
+    margin: 36px 0;
+  }
+  .pull-stat-num {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 40px;
+    color: #2E2E2E;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pull-stat-label {
+    font-size: 14px;
+    color: #8C8C8C;
+    line-height: 1.5;
+  }
+
+  /* Pull quote */
+  .pullquote {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.55;
+    color: #2E2E2E;
+    padding: 0 0 0 32px;
+    border-left: 2px solid #D9D4C8;
+    margin: 44px 0;
+    text-wrap: pretty;
+  }
+
+  /* ── Function blocks ─────────────────────────────── */
+  .function-block {
+    background: #F5F2EC;
+    border-top: 2px solid #5B6335;
+    padding: 28px 32px;
+    margin: 12px 0;
+  }
+  .function-block h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 0 0 10px;
+  }
+  .function-block p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #2E2E2E;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ── Byline ──────────────────────────────────────── */
+  .byline {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid #D9D4C8;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .byline-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .byline-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+  }
+
+  .byline-name {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    margin-bottom: 3px;
+  }
+  .byline-role {
+    font-size: 12px;
+    color: #8C8C8C;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Footer ──────────────────────────────────────── */
+  .site-footer {
+    border-top: 1px solid #D9D4C8;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 12px;
+    color: #8C8C8C;
+  }
+  .footer-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5B6335;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .footer-cta:hover { color: #464D27; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div>
+    <div class="wordmark">Michelle Wright</div>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <a href="index.html" class="header-link">← Writing</a>
+</header>
+
+<!-- Article -->
+<main class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-tag">AI &amp; Product</span>
+    <span class="meta-date">April 2026</span>
+  </div>
+
+  <h1 class="article-title">We swapped the motor but nobody redesigned the factory</h1>
+
+  <p class="article-lead">93% of developers use AI coding tools. Team productivity has improved 10%.</p>
+  <p class="article-lead-sub">The bottleneck was never the build.</p>
+
+  <hr class="rule-olive">
+
+  <div class="article-body">
+
+    <p>In the 1890s, factories installed electric motors into mills designed for steam. For 30 years there was almost no productivity gain. The upside only came when factories were redesigned around electricity: different floor plan, different roles, different flow entirely. The factories that electrified first didn't win. The ones that redesigned the floor did.</p>
+
+    <p>The same thing is happening now with AI. Every company has Copilot, most have ChatGPT, and some have Gemini or Claude. The redesign hasn't happened yet.</p>
+
+    <hr class="rule">
+
+    <h2>The assumption that has broken</h2>
+
+    <p>The old operating model had a hidden assumption baked into every layer of it: building was the scarce resource. It was expensive.</p>
+
+    <p>Every role, every ceremony, every checkpoint existed because committing to build something was a costly decision. The PM qualified the idea. The designer validated the concept. The engineer estimated the effort. QA tested before release. Each was a gate before the next expensive step.</p>
+
+    <p>AI breaks that assumption. Building is now cheap. You can prototype overnight. You can generate requirements in an hour. You can ship in a week what used to take a quarter.</p>
+
+    <div class="pullquote">
+      "The sprint cadence is unchanged. The roles are the same. The measurement framework is the same. That is the factory with a new motor and the same floor plan."
+    </div>
+
+    <hr class="rule">
+
+    <h2>What actually changes</h2>
+
+    <p>Marty Cagan frames product risk as four questions: can we build it? Can people use it? Will they want it? Does it make business sense? For 20 years, the first one dominated everything. Feasibility was the constraint. The entire operating model was built around it.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-num">21%</div>
+      <div class="pull-stat-label">More tasks completed by teams with high AI adoption,<br>across 121,000 developers at 450 companies — DX Survey</div>
+    </div>
+
+    <p>AI is dismantling feasibility first. Building is cheap. The old assumption, baked into every role and every ceremony, is no longer true.</p>
+
+    <p>Usability is following. AI can prototype, test, and iterate interfaces faster than any design sprint. Agents review code. Agents test flows. The designer's role is shifting from making screens to deciding what the screens need to accomplish.</p>
+
+    <p>That leaves two risks standing: value and viability. Will people actually want this? Does it make business sense? These cannot be automated. They require understanding customers, context, and commercial reality in ways that take time and human relationships to build.</p>
+
+    <div class="pullquote">
+      "Speed was never really the problem. Making it faster just exposes that the harder question was never properly answered."
+    </div>
+
+    <hr class="rule">
+
+    <h2>The dark factory</h2>
+
+    <p>Nate B Jones frames the destination as a dark factory: a fully automated manufacturing plant where the lights are off because no humans work there. Applied to software: a codebase that writes, reviews, deploys, and iterates itself. Humans present only for the two questions AI cannot answer.</p>
+
+    <p>It sounds distant but isn't. In January 2026, engineers at Anthropic and OpenAI said AI was writing 100% of their code. Anthropic's CEO confirmed 90% of Claude is now written by Claude itself. The dark factory isn't a thought experiment. It's already running at the companies building the tools.</p>
+
+    <p>The question isn't "are we a dark factory?" It's "are we getting darker?" How many human touches does your process require? That number should be falling.</p>
+
+    <hr class="rule">
+
+    <h2>The ripple effect across functions</h2>
+
+    <p>This is not an engineering problem. When building becomes free, every function's relationship with product changes.</p>
+
+    <div class="function-block">
+      <h3>Commercial / Revenue</h3>
+      <p>When building is fast, commercial gets what it asks for. Short term, that looks like winning. The problem compounds quietly. A product that says yes to everything becomes a product where features accumulate and the strategy dilutes. It surfaces later in churn, or in a diligence conversation that cannot tell a coherent story about what the product is for.</p>
+    </div>
+
+    <div class="function-block">
+      <h3>Marketing / CMO</h3>
+      <p>When you can build personalised experiences faster than campaigns, the product becomes the marketing and the growth loop inverts. Marketing that sits downstream of product, waiting for features to package, is structurally in the wrong position.</p>
+    </div>
+
+    <div class="function-block">
+      <h3>Engineering / CTO</h3>
+      <p>Engineering stops being the constraint and becomes the platform. The brief shifts: not "can we build it?" but "have we built the right foundation for agents to build it well?" Cost does not disappear — it shifts from headcount to compute. Architecture is now also a cost optimisation question.</p>
+    </div>
+
+    <div class="function-block">
+      <h3>Operations / COO</h3>
+      <p>Sprints, stand-ups, ceremonies — these were designed for people. Agents do not need stand-ups. The ceremony structure built around human coordination becomes overhead without a purpose. What replaces it is visibility infrastructure: dashboards, status systems, decision logs. Knowing which processes to dissolve and which to keep is the hardest operational call of the next five years.</p>
+    </div>
+
+    <div class="function-block">
+      <h3>Product / CPO</h3>
+      <p>Every other function gets faster, cheaper, or smaller. This one gets harder — and more important. Not just for the product function. For every function in the building.</p>
+    </div>
+
+    <hr class="rule">
+
+    <p>Return to the four product risks. Feasibility has nearly disappeared. Usability is compressing. What remains — and what nothing automates — are value and viability. These are the two that devalue fastest when product leadership is absent. A business that ships fast without answering them produces high velocity and declining relevance.</p>
+
+    <p>Design shrinks. Engineering shrinks. The product builder grows. Not a role — a capability. The ability to frame the right problem, think creatively about how to solve it, and drive a vision across the organisation.</p>
+
+    <div class="pullquote">
+      "Most companies have given product more tools and kept the same reporting line — but not the genuine authority to make the decisions that matter. That is the factory with a new motor and the same floor plan."
+    </div>
+
+    <p>We are installing AI. The harder challenge — the one most organisations have not yet addressed — is redesigning the factory around it.</p>
+
+  </div><!-- /article-body -->
+
+  <!-- Byline -->
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="../uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div>
+      <div class="byline-name">Michelle Wright</div>
+      <div class="byline-role">Fractional CPO · Product transformation for regulated financial services</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Michelle Wright</span>
+  <a href="#" class="footer-cta">Work with me →</a>
+</footer>
+
+</body>
+</html>

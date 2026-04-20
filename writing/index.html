@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+  body { background: #EDE9E0; color: #2E2E2E; font-family: 'Nunito', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  .site-header {
+    padding: 22px 48px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .wordmark { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 17px; color: #2E2E2E; letter-spacing: -0.01em; text-decoration: none; }
+  .wordmark-sub { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5B6335; margin-top: 3px; font-family: 'DM Sans', sans-serif; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-link { font-size: 13px; color: #2E2E2E; text-decoration: none; font-family: 'DM Sans', sans-serif; }
+  .nav-link:hover { color: #5B6335; }
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: #2E2E2E; color: #EDE9E0; border: none;
+    padding: 9px 18px; border-radius: 2px; cursor: pointer; text-decoration: none;
+  }
+
+  /* Hero */
+  .page-hero {
+    padding: 72px 48px 56px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 40px;
+  }
+  .page-hero h1 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 52px; font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.02em; color: #2E2E2E;
+  }
+  .page-hero p {
+    font-size: 16px; line-height: 1.65; color: #8C8C8C;
+    max-width: 360px; flex-shrink: 0;
+  }
+
+  /* Article list */
+  .article-list { max-width: 860px; margin: 0 auto; padding: 0 48px 120px; }
+
+  .article-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 48px;
+    padding: 44px 0;
+    border-bottom: 1px solid #D9D4C8;
+    text-decoration: none;
+    color: inherit;
+    transition: background 200ms ease;
+  }
+  .article-item:first-child { border-top: 1px solid #D9D4C8; margin-top: 48px; }
+  .article-item:hover .article-title { color: #5B6335; }
+
+  .article-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; color: #8C8C8C;
+    padding-top: 6px;
+    text-transform: uppercase;
+  }
+  .article-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #5B6335; background: #E8EBDB;
+    padding: 3px 9px; border-radius: 2px;
+    display: inline-block; margin-bottom: 12px;
+  }
+  .article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 26px; font-weight: 400; line-height: 1.15;
+    letter-spacing: -0.01em; color: #2E2E2E;
+    margin-bottom: 12px; transition: color 200ms ease;
+    text-wrap: pretty;
+  }
+  .article-excerpt {
+    font-size: 15px; font-weight: 300; line-height: 1.65; color: #8C8C8C;
+    text-wrap: pretty; max-width: 580px;
+  }
+  .article-read {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500; color: #5B6335;
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* Placeholder items */
+  .article-placeholder {
+    padding: 44px 0;
+    border-bottom: 1px solid #D9D4C8;
+    display: grid; grid-template-columns: 80px 1fr; gap: 0 48px;
+  }
+  .placeholder-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: #D9D4C8;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding-top: 6px;
+  }
+  .placeholder-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px; color: #D9D4C8; font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Footer */
+  .site-footer {
+    border-top: 1px solid #D9D4C8;
+    padding: 28px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
+  .footer-cta { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: #5B6335; text-decoration: none; }
+  .footer-cta:hover { color: #464D27; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <a href="../ui_kits/website/index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav class="nav-links">
+    <a href="../ui_kits/website/index.html" class="nav-link">Services</a>
+    <a href="../ui_kits/website/index.html" class="nav-link">About</a>
+    <a class="nav-link" style="color:#5B6335;font-weight:500;">Writing</a>
+    <a href="../contact.html" class="nav-cta">Get in touch</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <h1>Writing</h1>
+  <p>On product leadership, AI, and the things most organisations haven't figured out yet.</p>
+</div>
+
+<div class="article-list">
+
+  <!-- Article 1 — live -->
+  <a href="factory-essay.html" class="article-item">
+    <div class="article-date">Apr 2026</div>
+    <div>
+      <div class="article-tag">AI &amp; Product</div>
+      <div class="article-title">We swapped the motor but nobody redesigned the factory</div>
+      <div class="article-excerpt">93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build — and the operating model still hasn't caught up.</div>
+      <div class="article-read">Read essay →</div>
+    </div>
+  </a>
+
+  <!-- Placeholder slots for future articles -->
+  <div class="article-placeholder">
+    <div class="placeholder-label">Coming</div>
+    <div class="placeholder-title">Your next essay</div>
+  </div>
+
+  <div class="article-placeholder">
+    <div class="placeholder-label">Coming</div>
+    <div class="placeholder-title">Your next essay</div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Michelle Wright</span>
+  <a href="../contact.html" class="footer-cta">Work with me →</a>
+</footer>
+
+</body>
+</html>
