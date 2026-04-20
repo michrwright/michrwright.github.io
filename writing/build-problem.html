@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Build Problem Is Solved. Product Thinking Is the New Moat. — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+  body {
+    background: #EDE9E0;
+    color: #2E2E2E;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .site-header, .header-link, .meta-tag, .meta-date, .article-body h3,
+  .function-block h3, .byline-role, .footer-copy, .footer-cta,
+  .article-lead-sub, .pull-stat-label, .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+  .site-header {
+    padding: 22px 48px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark-sub {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin-top: 3px;
+  }
+  .header-link {
+    font-size: 13px;
+    color: #8C8C8C;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .header-link:hover { color: #2E2E2E; }
+
+  .article-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .meta-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    background: #E8EBDB;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .meta-date {
+    font-size: 12px;
+    color: #8C8C8C;
+  }
+
+  h1.article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #2E2E2E;
+    margin-bottom: 32px;
+    text-wrap: pretty;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: 'Nunito', sans-serif;
+    color: #2E2E2E;
+    margin-bottom: 20px;
+    text-wrap: pretty;
+  }
+  .article-lead-sub {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #8C8C8C;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+
+  .rule {
+    border: none;
+    border-top: 1px solid #D9D4C8;
+    margin: 48px 0;
+  }
+  .rule-olive {
+    border: none;
+    border-top: 2px solid #5B6335;
+    width: 40px;
+    margin: 48px 0;
+  }
+
+  .article-body p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #2E2E2E;
+    margin-bottom: 24px;
+    text-wrap: pretty;
+  }
+
+  .article-body h2 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2E2E2E;
+    margin: 56px 0 20px;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+
+  .article-body h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 40px 0 12px;
+  }
+
+  .pull-stat {
+    border-left: 2px solid #5B6335;
+    padding: 4px 0 4px 24px;
+    margin: 36px 0;
+  }
+  .pull-stat-num {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 40px;
+    color: #2E2E2E;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pull-stat-label {
+    font-size: 14px;
+    color: #8C8C8C;
+    line-height: 1.5;
+  }
+
+  .pullquote {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.55;
+    color: #2E2E2E;
+    padding: 0 0 0 32px;
+    border-left: 2px solid #D9D4C8;
+    margin: 44px 0;
+    text-wrap: pretty;
+  }
+
+  .function-block {
+    background: #F5F2EC;
+    border-top: 2px solid #5B6335;
+    padding: 28px 32px;
+    margin: 12px 0;
+  }
+  .function-block h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 0 0 10px;
+  }
+  .function-block p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #2E2E2E;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .byline {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid #D9D4C8;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .byline-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .byline-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+  }
+  .byline-name {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    margin-bottom: 3px;
+  }
+  .byline-role {
+    font-size: 12px;
+    color: #8C8C8C;
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer {
+    border-top: 1px solid #D9D4C8;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy { font-size: 12px; color: #8C8C8C; }
+  .footer-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5B6335;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .footer-cta:hover { color: #464D27; }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 24px; }
+    .site-header nav { display: none; }
+    .article-wrap { padding: 48px 24px 80px; }
+    h1.article-title { font-size: 34px; }
+    .article-lead { font-size: 18px; }
+    .pullquote { font-size: 20px; }
+    .site-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <a href="../index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav style="display:flex;gap:28px;align-items:center;">
+    <a href="../index.html#services" class="header-link">Services</a>
+    <a href="../index.html#about" class="header-link">About</a>
+    <a href="index.html" class="header-link">Writing</a>
+    <a href="../contact.html" style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;background:#2E2E2E;color:#EDE9E0;padding:9px 18px;border-radius:2px;text-decoration:none;">Get in touch</a>
+  </nav>
+</header>
+
+<main class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-tag">AI &amp; Product</span>
+    <span class="meta-date">March 2026</span>
+  </div>
+
+  <h1 class="article-title">The Build Problem Is Solved. Product Thinking Is the New Moat.</h1>
+
+  <p class="article-lead">For twenty years, the hardest thing in tech was building the thing.</p>
+  <p class="article-lead-sub">That question no longer applies.</p>
+
+  <hr class="rule-olive">
+
+  <div class="article-body">
+
+    <p>I saw this shift before I could fully name it.</p>
+
+    <p>Moving into a fractional CPO role, I set out to build something that scaled me: a system that could give me back time. On a Saturday morning I sat down and tried — not with a developer, but me and Claude Code. I understood the problem and what I wanted. By lunchtime I had a working voice interface on my phone that let me speak an update and have it automatically log to the database tracking my business development pipeline. No app. No engineering team. A front-end interface, a database, and a voice prompt, built in a morning by someone who had never written a line of code.</p>
+
+    <p>That was the moment. Not because of what I'd built — it was basic. But because I no longer needed a developer. That was empowering.</p>
+
+    <div class="pullquote">
+      "The new constraint is deciding what to build."
+    </div>
+
+    <p>Andrew Ng named it directly: "The invention of agentic coding assistants has led to a new builder's block, where the holdup is deciding what to build." His teams are now proposing a ratio of one PM to 0.5 engineers.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-num">1 : 0.5</div>
+      <div class="pull-stat-label">Andrew Ng's proposed PM-to-engineer ratio — twice as many product people as engineers. A structural bet on where value now sits.</div>
+    </div>
+
+    <p>Mike Krieger, co-founder of Instagram and CPO at Anthropic, said it plainly: "The models today are good at adding features. They're not necessarily good about figuring out what to cut out of the product."</p>
+
+    <hr class="rule">
+
+    <h2>The obvious response — and why it doesn't hold</h2>
+
+    <p>If building is cheap, mistakes are cheap too. Fail fast, learn, move on.</p>
+
+    <p>That works at the feature level. It doesn't work at strategy. When building is expensive, cost is the forcing function that makes you say no. That constraint creates discipline — and counterintuitively, it creates innovation. Constraints force the question that matters most: if we can only do one thing, what's worth building?</p>
+
+    <p>When cost disappears, every request looks reasonable. Sales asks for a custom integration. You build it. A client wants a slightly different version of the core feature. You build it. Someone at the last board meeting had an idea. You build it. The product doesn't collapse — it sprawls. Three years later you can't explain it in one sentence, Sales doesn't know how to sell it, and the original value proposition is buried under a decade of "yes, we can build that."</p>
+
+    <p>That cost doesn't show up on a burndown chart. It shows up when you try to raise a Series B and can't tell the story. Or when a PE firm does diligence and finds a different product at every client site.</p>
+
+    <div class="pullquote">
+      "Fail fast is a feature-level idea. Strategic drift is a company-level risk. Cheap building makes the first one easier and the second one invisible until it's too late."
+    </div>
+
+    <hr class="rule">
+
+    <h2>What this means for founders and CEOs right now</h2>
+
+    <p>If you're scaling a product business in 2026, the question has changed. It's not "do we have the engineering capacity to build this?" It's "do we have the product clarity to know what's worth building?"</p>
+
+    <p>Most companies don't have good infrastructure for that second question. They have backlogs. They have roadmaps built in quarterly planning cycles. They have PMs who are excellent at managing delivery and less practised at interrogating whether what they're delivering will actually sell, move revenue, or hold up in a board meeting.</p>
+
+    <div class="function-block">
+      <h3>The pattern that shows up repeatedly</h3>
+      <p>In scaling B2B businesses, the technology is strong. The product is hard to sell. Not because the engineering is wrong — because the decisions upstream of the engineering were never made rigorously enough.</p>
+    </div>
+
+    <p>Companies that treat AI as a feature release will move faster in the wrong direction. The ones that get this right will build less and compound more.</p>
+
+    <div class="pullquote">
+      "The build problem is solved. The product thinking problem is wide open."
+    </div>
+
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="../uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div>
+      <div class="byline-name">Michelle Wright</div>
+      <div class="byline-role">Fractional CPO · Product transformation for regulated financial services</div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Michelle Wright</span>
+  <a href="../contact.html" class="footer-cta">Work with me →</a>
+</footer>
+
+</body>
+</html>

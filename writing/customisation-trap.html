@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The customisation trap: why saying yes gets easier and more expensive at the same time — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+  body {
+    background: #EDE9E0;
+    color: #2E2E2E;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .site-header, .header-link, .meta-tag, .meta-date, .article-body h3,
+  .function-block h3, .byline-role, .footer-copy, .footer-cta,
+  .article-lead-sub, .pull-stat-label, .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+  .site-header {
+    padding: 22px 48px;
+    border-bottom: 1px solid #D9D4C8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark-sub {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin-top: 3px;
+  }
+  .header-link {
+    font-size: 13px;
+    color: #8C8C8C;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .header-link:hover { color: #2E2E2E; }
+
+  .article-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .meta-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5B6335;
+    background: #E8EBDB;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .meta-date {
+    font-size: 12px;
+    color: #8C8C8C;
+  }
+
+  h1.article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #2E2E2E;
+    margin-bottom: 32px;
+    text-wrap: pretty;
+  }
+
+  .article-lead {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: 'Nunito', sans-serif;
+    color: #2E2E2E;
+    margin-bottom: 20px;
+    text-wrap: pretty;
+  }
+  .article-lead-sub {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #8C8C8C;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+
+  .rule {
+    border: none;
+    border-top: 1px solid #D9D4C8;
+    margin: 48px 0;
+  }
+  .rule-olive {
+    border: none;
+    border-top: 2px solid #5B6335;
+    width: 40px;
+    margin: 48px 0;
+  }
+
+  .article-body p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #2E2E2E;
+    margin-bottom: 24px;
+    text-wrap: pretty;
+  }
+
+  .article-body h2 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2E2E2E;
+    margin: 56px 0 20px;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+
+  .article-body h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 40px 0 12px;
+  }
+
+  .pull-stat {
+    border-left: 2px solid #5B6335;
+    padding: 4px 0 4px 24px;
+    margin: 36px 0;
+  }
+  .pull-stat-num {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 40px;
+    color: #2E2E2E;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .pull-stat-label {
+    font-size: 14px;
+    color: #8C8C8C;
+    line-height: 1.5;
+  }
+
+  .pullquote {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.55;
+    color: #2E2E2E;
+    padding: 0 0 0 32px;
+    border-left: 2px solid #D9D4C8;
+    margin: 44px 0;
+    text-wrap: pretty;
+  }
+
+  .function-block {
+    background: #F5F2EC;
+    border-top: 2px solid #5B6335;
+    padding: 28px 32px;
+    margin: 12px 0;
+  }
+  .function-block h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5B6335;
+    margin: 0 0 10px;
+  }
+  .function-block p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #2E2E2E;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .byline {
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid #D9D4C8;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .byline-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .byline-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+  }
+  .byline-name {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #2E2E2E;
+    margin-bottom: 3px;
+  }
+  .byline-role {
+    font-size: 12px;
+    color: #8C8C8C;
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer {
+    border-top: 1px solid #D9D4C8;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy { font-size: 12px; color: #8C8C8C; }
+  .footer-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5B6335;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .footer-cta:hover { color: #464D27; }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 24px; }
+    .site-header nav { display: none; }
+    .article-wrap { padding: 48px 24px 80px; }
+    h1.article-title { font-size: 34px; }
+    .article-lead { font-size: 18px; }
+    .pullquote { font-size: 20px; }
+    .site-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <a href="../index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav style="display:flex;gap:28px;align-items:center;">
+    <a href="../index.html#services" class="header-link">Services</a>
+    <a href="../index.html#about" class="header-link">About</a>
+    <a href="index.html" class="header-link">Writing</a>
+    <a href="../contact.html" style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;background:#2E2E2E;color:#EDE9E0;padding:9px 18px;border-radius:2px;text-decoration:none;">Get in touch</a>
+  </nav>
+</header>
+
+<main class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-tag">Product Strategy</span>
+    <span class="meta-date">April 2026</span>
+  </div>
+
+  <h1 class="article-title">The customisation trap: why saying yes gets easier and more expensive at the same time</h1>
+
+  <p class="article-lead">AI has made building software cheap. So cheap you can throw code away and rebuild it.</p>
+  <p class="article-lead-sub">It sounds right, but it isn't.</p>
+
+  <hr class="rule-olive">
+
+  <div class="article-body">
+
+    <p>The old objection to customisation — that the engineering cost to build and maintain is too high — no longer applies. You can give every client exactly what they want. Build bespoke for the bank that needs a custom report format. Build a different data loader for the client whose compliance team interprets the regulation differently. If something breaks, rebuild it. The economics that made customisation dangerous have changed.</p>
+
+    <h2>It starts with a reasonable decision.</h2>
+
+    <p>The conversation about product-led growth happens in almost every scaling B2B company at some point. The CEO believes it. Says it in the all-hands. Means it when they say it.</p>
+
+    <p>Then the £500k deal lands. A large client — a bank, a payments platform, an enterprise with real commercial weight — asks for one specific thing. A custom report format. A slightly different data field for their compliance team. The CRO says it's just a small thing.</p>
+
+    <p>The product principle is abstract but the revenue number is real. The justification is "just this once."</p>
+
+    <p>Then another client asks for something similar but different. Then a third. Each decision is locally rational. The commercial logic is sound every single time. Nobody is making a bad call in the moment.</p>
+
+    <p>Three years later you have 47 configurations, different data models for each client, different ETL pipelines pulling data in different shapes, and a product that cannot be demoed the same way twice — because no two clients have the same product.</p>
+
+    <hr class="rule">
+
+    <h2>The code was never the expensive part.</h2>
+
+    <div class="pullquote">
+      "What grows around the code is the expensive part."
+    </div>
+
+    <p>Walk into a scaling B2B business that has been saying yes to custom requests for three years and look at the org chart — not just the product team, the whole company. Product and engineering are a fraction of it. The rest? Implementation teams onboarding each bespoke configuration. Support teams where every person needs to know their specific client's setup. Product managers who are actually project managers, executing someone else's spec rather than defining a product direction. A sales team running a proof of value process that cobbles together APIs and workarounds and presents it to the client as a product — because the actual product can't demo what was promised.</p>
+
+    <p>None of that cost appears on the engineering budget. All of it appears on the org chart. That is the cost of customisation — not the engineering hours, but the organisation you have to build to service the complexity you created.</p>
+
+    <hr class="rule">
+
+    <h2>The product full of MVPs nobody went back to.</h2>
+
+    <p>Custom features get built to 80% because the next deal arrives before this one is finished. The feature ships as an MVP, lives as an MVP, and nobody goes back. Multiply that across three years and you have a product with no depth anywhere — dozens of things started, delivered just enough to satisfy the original promise, and never improved.</p>
+
+    <p>And nobody turns anything off. One client churns. The other goes quiet. Nobody decommissions the feature because nobody is sure who owns it or whether it's still in use. So it stays — tested in every release, carried through every migration.</p>
+
+    <div class="pull-stat">
+      <div class="pull-stat-num">80%</div>
+      <div class="pull-stat-label">of software features are rarely or never used — Pendo. You built it, the client left, and nobody noticed.</div>
+    </div>
+
+    <p>AI cannot fix the judgment calls this creates. Which configurations are worth maintaining? Which clients need to be migrated? When does a promise sales made two years ago get retired? These are commercial decisions requiring context no model has access to. The judgment load doesn't shrink when building gets cheaper. It grows, because you've said yes more often.</p>
+
+    <hr class="rule">
+
+    <h2>Then you go blind.</h2>
+
+    <p>When your product fragments across dozens of configurations, you lose the ability to see it. Feature usage data becomes meaningless when every client uses a different feature set. You don't know what's being used and what isn't, because "used by whom and in what configuration" are questions you can't answer cleanly. You discover features by accident — in a research session, in a conversation with a client, in a benchmark report from a consultant who tells you that you have a capability you thought was still on the roadmap.</p>
+
+    <p>The product managers cannot manage the product. They are spread across 40 features with few users on each and there is no time to go deep on anything. No data to know how to improve. No way to ask the right questions across the client base when every client's experience is unique.</p>
+
+    <p>And when people leave — the engineer who built the integration, the PM who knew what the CRO had promised in a meeting that couldn't be recorded because the client's security policy didn't allow it — that context leaves with them. AI can read the code and generate documentation. It cannot reconstruct why the decision was made, what the commercial commitment behind it was, or whether that client is still strategically important three years later.</p>
+
+    <hr class="rule">
+
+    <h2>What the companies getting this right do differently.</h2>
+
+    <p>The companies that avoid this don't have better engineers or more disciplined sales teams. They make different decisions earlier.</p>
+
+    <div class="function-block">
+      <h3>First — invest in the core</h3>
+      <p>A deep, well-architected foundation with a consistent data model, clear platform boundaries, a product that does fewer things completely rather than many things partially.</p>
+    </div>
+
+    <div class="function-block">
+      <h3>Second — decide in advance what yes means</h3>
+      <p>What can be configured, what can't, and what it costs the product when something falls outside that boundary. A client can have their report format. They cannot have a different data model. That distinction has to be architectural, not just a policy you try to hold in a sales negotiation.</p>
+    </div>
+
+    <div class="pullquote">
+      "Custom at the surface. Standard at the foundation. The product gets deeper and richer over time rather than wider and shallower."
+    </div>
+
+    <hr class="rule">
+
+    <h2>The real cost — a note for CEOs and investors.</h2>
+
+    <p>The revenue multiple you are optimising for is real. So is the cost of unwinding what you built to get there.</p>
+
+    <p>The due diligence question shouldn't just be about how much revenue you have. It should include: how many of your features are unfinished promises? How many custom implementations belong to clients who have churned? How much of your headcount exists to service complexity rather than build product? What it will cost the next owner to standardise what you built across dozens of bespoke configurations?</p>
+
+    <p>That is what a sophisticated buyer will find. And they will price it accordingly.</p>
+
+    <div class="pullquote">
+      "The customisation trap is not always visible on the way in. It is always visible on the way out."
+    </div>
+
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="../uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div>
+      <div class="byline-name">Michelle Wright</div>
+      <div class="byline-role">Fractional CPO · Product transformation for regulated financial services</div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Michelle Wright</span>
+  <a href="../contact.html" class="footer-cta">Work with me →</a>
+</footer>
+
+</body>
+</html>
