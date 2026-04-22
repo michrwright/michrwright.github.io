@@ -44,7 +44,7 @@ body { background: #EDE9E0; color: #1A1A1A; font-family: 'Nunito', sans-serif; f
   border-bottom: 1px solid var(--cream-dark);
   backdrop-filter: blur(8px);
 }
-.nav-wordmark { font-family: var(--serif); font-size: 17px; color: var(--charcoal); letter-spacing: -0.01em; text-decoration: none; display: block; }
+.nav-wordmark { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--charcoal); letter-spacing: -0.01em; text-decoration: none; display: block; }
 .nav-sub { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); margin-top: 2px; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a { font-family: var(--sans); font-size: 13px; color: var(--charcoal); text-decoration: none; transition: color 150ms ease; }
@@ -181,6 +181,8 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .nav { padding: 16px 24px; }
   .nav-links { gap: 16px; }
   .nav-links a:not(.nav-cta) { display: none; }
+  .nav-wordmark { font-size: 17px; }
+  .nav-sub { font-size: 9px; }
 
   /* Hero */
   .hero { min-height: 85vh; }
@@ -196,6 +198,10 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .intro { padding: 64px 24px; }
   .intro-inner { grid-template-columns: 1fr; gap: 40px; }
   .intro-quote { font-size: 22px; }
+  .hero-ctas { justify-content: center; }
+  .hero-eyebrow { text-align: center; }
+  h1.hero-h1 { text-align: center; }
+  .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
 
   /* Services */
   .services { padding: 64px 0; }
@@ -336,6 +342,28 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img fade-in">
+      <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div class="fade-in">
+      <div class="about-eyebrow">About Michelle</div>
+      <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
+      <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
+      <p class="about-body">I've scaled platforms from 8 users to 8,000 across 24 markets, delivered $50M in revenue in two months, and opened a $160M market opportunity with a team of four.</p>
+      <p class="about-body">Now I work fractionally — bringing that experience into regulated businesses where product isn't yet driving the commercial outcomes it should. I work directly with CEOs and boards. I diagnose fast and don't do unnecessary process.</p>
+      <div class="creds">
+        <div class="cred-row"><span class="cred-label">Experience</span><span class="cred-val">20+ years · HSBC, LSEG, Barclays, RBS</span></div>
+        <div class="cred-row"><span class="cred-label">Sector</span><span class="cred-val">Banking · Payments · Insurance · Asset management</span></div>
+        <div class="cred-row"><span class="cred-label">Sweet spot</span><span class="cred-val">PE-backed or founder-led · £5m+ ARR · Regulated</span></div>
+      </div>
+      <div style="margin-top:36px;"><a href="contact.html" class="btn btn-cream">Work with me</a></div>
+    </div>
+  </div>
+</section>
+
 <!-- FIRST 90 DAYS -->
 <section class="ninety" id="ninety">
   <div class="ninety-inner">
@@ -364,28 +392,6 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
           <li>Improved investor and board confidence through reduced execution risk.</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-img fade-in">
-      <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
-    </div>
-    <div class="fade-in">
-      <div class="about-eyebrow">About Michelle</div>
-      <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
-      <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
-      <p class="about-body">I've scaled platforms from 8 users to 8,000 across 24 markets, delivered $50M in revenue in two months, and opened a $160M market opportunity with a team of four.</p>
-      <p class="about-body">Now I work fractionally — bringing that experience into regulated businesses where product isn't yet driving the commercial outcomes it should. I work directly with CEOs and boards. I diagnose fast and don't do unnecessary process.</p>
-      <div class="creds">
-        <div class="cred-row"><span class="cred-label">Experience</span><span class="cred-val">20+ years · HSBC, LSEG, Barclays, RBS</span></div>
-        <div class="cred-row"><span class="cred-label">Sector</span><span class="cred-val">Banking · Payments · Insurance · Asset management</span></div>
-        <div class="cred-row"><span class="cred-label">Sweet spot</span><span class="cred-val">PE-backed or founder-led · £5m+ ARR · Regulated</span></div>
-      </div>
-      <div style="margin-top:36px;"><a href="contact.html" class="btn btn-cream">Work with me</a></div>
     </div>
   </div>
 </section>
