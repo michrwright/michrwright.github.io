@@ -258,9 +258,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       document.getElementById('form-wrap').style.display = 'none';
       document.getElementById('success').classList.add('visible');
     } else {
+      const data = await response.json();
       submitBtn.textContent = 'Send message';
       submitBtn.disabled = false;
-      errorEl.textContent = 'Something went wrong. Please email michrwright@gmail.com directly.';
+      errorEl.textContent = 'Error ' + response.status + ': ' + JSON.stringify(data);
       errorEl.style.display = 'block';
     }
   } catch {
