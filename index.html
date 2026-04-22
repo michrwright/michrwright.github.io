@@ -96,30 +96,30 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .intro-body p { font-size: 16px; font-weight: 300; line-height: 1.75; color: #3A3835; margin-bottom: 18px; }
 
 /* ── SERVICES ── */
-.services { background: var(--charcoal); padding: 96px 0; }
+.services { background: var(--cream-mid); padding: 96px 0; }
 .services-header { max-width: 1100px; margin: 0 auto 56px; padding: 0 52px; display: flex; justify-content: space-between; align-items: flex-end; }
-.services-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); }
-.services-h2 .eyebrow { color: var(--olive-light); }
-.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.05); }
-.svc { background: var(--charcoal); padding: 44px 40px 48px; transition: background 200ms ease; }
-.svc:hover { background: var(--charcoal-mid); }
-.svc-num { font-family: var(--sans); font-size: 11px; color: var(--olive-light); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 32px; }
-.svc-title { font-family: var(--serif); font-size: 21px; color: var(--cream); line-height: 1.2; margin-bottom: 14px; }
-.svc-body { font-size: 14px; font-weight: 300; color: rgba(237,233,224,0.52); line-height: 1.7; margin-bottom: 24px; }
+.services-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); }
+.services-h2 .eyebrow { color: var(--olive); }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--cream-dark); }
+.svc { background: var(--white); padding: 44px 40px 48px; transition: background 200ms ease; }
+.svc:hover { background: var(--cream); }
+.svc-num { font-family: var(--sans); font-size: 11px; color: var(--olive); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 32px; }
+.svc-title { font-family: var(--serif); font-size: 21px; color: var(--charcoal); line-height: 1.2; margin-bottom: 14px; }
+.svc-body { font-size: 14px; font-weight: 300; color: #3A3835; line-height: 1.7; margin-bottom: 24px; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.svc-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 3px 9px; background: rgba(91,99,53,0.2); color: var(--olive-light); border-radius: 2px; }
+.svc-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 3px 9px; background: var(--olive-muted); color: var(--olive-dark); border-radius: 2px; }
 
 /* ── FIRST 90 DAYS ── */
-.ninety { background: var(--cream-mid); padding: 96px 52px; }
+.ninety { background: var(--charcoal); padding: 96px 52px; }
 .ninety-inner { max-width: 1100px; margin: 0 auto; }
 .ninety-header { margin-bottom: 56px; }
-.ninety-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); margin-top: 14px; }
+.ninety-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); margin-top: 14px; }
 .ninety-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-.ninety-col-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); margin-bottom: 24px; }
+.ninety-col-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive-light); margin-bottom: 24px; }
 .ninety-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
-.ninety-list li { font-size: 15px; font-weight: 300; color: #3A3835; line-height: 1.7; padding: 14px 0; border-bottom: 1px solid var(--cream-dark); }
-.ninety-list li:first-child { border-top: 1px solid var(--cream-dark); }
-.ninety-outcomes li { color: var(--charcoal); font-weight: 400; }
+.ninety-list li { font-size: 15px; font-weight: 300; color: rgba(237,233,224,0.75); line-height: 1.7; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.ninety-list li:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+.ninety-outcomes li { color: var(--cream); font-weight: 400; }
 
 /* ── ABOUT ── */
 .about { background: var(--charcoal); padding: 96px 52px; }
@@ -311,14 +311,36 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img fade-in">
+      <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div class="fade-in">
+      <div class="about-eyebrow">About Michelle</div>
+      <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
+      <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
+      <p class="about-body">I've scaled platforms from 8 users to 8,000 across 24 markets, delivered $50M in revenue in two months, and opened a $160M market opportunity with a team of four.</p>
+      <p class="about-body">Now I work fractionally — bringing that experience into regulated businesses where product isn't yet driving the commercial outcomes it should. I work directly with CEOs and boards. I diagnose fast and don't do unnecessary process.</p>
+      <div class="creds">
+        <div class="cred-row"><span class="cred-label">Experience</span><span class="cred-val">20+ years · HSBC, LSEG, Barclays, RBS</span></div>
+        <div class="cred-row"><span class="cred-label">Sector</span><span class="cred-val">Banking · Payments · Insurance · Asset management</span></div>
+        <div class="cred-row"><span class="cred-label">Sweet spot</span><span class="cred-val">PE-backed or founder-led · £5m+ ARR · Regulated</span></div>
+      </div>
+      <div style="margin-top:36px;"><a href="contact.html" class="btn btn-cream">Work with me</a></div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
     <div>
-      <div class="eyebrow" style="color:var(--olive-light);">What I do</div>
+      <div class="eyebrow" style="color:var(--olive);">What I do</div>
       <div class="services-h2">Three things I fix.<br>All of them commercial.</div>
     </div>
-    <a href="contact.html" class="btn btn-olive">Work with me</a>
+    <a href="contact.html" class="btn btn-primary">Work with me</a>
   </div>
   <div class="services-grid" style="grid-template-columns:repeat(3,1fr);">
     <div class="svc fade-in">
@@ -338,28 +360,6 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
       <div class="svc-title">Hiring & team design</div>
       <div class="svc-body">Build a product function that scales. From defining roles to conducting interviews to onboarding your first PM.</div>
       <div class="svc-tags"><span class="svc-tag">Hiring</span><span class="svc-tag">Org design</span><span class="svc-tag">Onboarding</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-img fade-in">
-      <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
-    </div>
-    <div class="fade-in">
-      <div class="about-eyebrow">About Michelle</div>
-      <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
-      <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
-      <p class="about-body">I've scaled platforms from 8 users to 8,000 across 24 markets, delivered $50M in revenue in two months, and opened a $160M market opportunity with a team of four.</p>
-      <p class="about-body">Now I work fractionally — bringing that experience into regulated businesses where product isn't yet driving the commercial outcomes it should. I work directly with CEOs and boards. I diagnose fast and don't do unnecessary process.</p>
-      <div class="creds">
-        <div class="cred-row"><span class="cred-label">Experience</span><span class="cred-val">20+ years · HSBC, LSEG, Barclays, RBS</span></div>
-        <div class="cred-row"><span class="cred-label">Sector</span><span class="cred-val">Banking · Payments · Insurance · Asset management</span></div>
-        <div class="cred-row"><span class="cred-label">Sweet spot</span><span class="cred-val">PE-backed or founder-led · £5m+ ARR · Regulated</span></div>
-      </div>
-      <div style="margin-top:36px;"><a href="contact.html" class="btn btn-cream">Work with me</a></div>
     </div>
   </div>
 </section>
