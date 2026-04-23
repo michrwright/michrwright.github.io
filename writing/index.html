@@ -46,14 +46,14 @@
 
   /* Hero */
   .page-hero {
-    position: relative; overflow: hidden;
+    position: relative;
     padding: 72px 48px 56px;
     border-bottom: 1px solid rgba(237,233,224,0.07);
     display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;
     background: var(--base);
   }
   .page-hero::before {
-    content: ''; position: absolute; top: -40%; right: -10%; width: 600px; height: 600px;
+    content: ''; position: absolute; top: 0; right: -5%; width: 600px; height: 500px;
     background: radial-gradient(ellipse, rgba(196,169,106,0.28) 0%, transparent 65%);
     pointer-events: none;
   }
@@ -66,12 +66,13 @@
   .page-hero p { position: relative; font-size: 16px; line-height: 1.65; color: var(--cream-dim); max-width: 360px; flex-shrink: 0; }
 
   /* Article list */
-  .article-list { position: relative; overflow: hidden; max-width: 860px; margin: 0 auto; padding: 0 48px 120px; }
-  .article-list::before {
-    content: ''; position: absolute; bottom: 10%; left: -20%; width: 500px; height: 500px;
-    background: radial-gradient(ellipse, rgba(196,169,106,0.18) 0%, transparent 65%);
+  .articles-section { position: relative; overflow: hidden; }
+  .articles-section::before {
+    content: ''; position: absolute; bottom: 5%; right: 0; width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(196,169,106,0.20) 0%, transparent 65%);
     pointer-events: none;
   }
+  .article-list { position: relative; max-width: 860px; margin: 0 auto; padding: 0 48px 120px; }
 
   .article-item {
     position: relative;
@@ -137,7 +138,7 @@
   <p>On product leadership, AI, and the things most organisations haven't figured out yet.</p>
 </div>
 
-<div class="article-list">
+<div class="articles-section"><div class="article-list">
 
   <a href="factory-essay.html" class="article-item">
     <div class="article-date">Apr 2026</div>
@@ -179,7 +180,7 @@
     </div>
   </a>
 
-</div>
+</div></div>
 
 <footer class="site-footer">
   <span class="footer-copy">© 2026 Michelle Wright</span>
