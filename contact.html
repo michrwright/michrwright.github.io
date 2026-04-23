@@ -123,7 +123,16 @@
   .success-body { font-size: 16px; color: var(--cream-dim); font-weight: 300; }
 
   /* Footer */
-  .site-footer { border-top: 1px solid rgba(237,233,224,0.06); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; background: #080807; }
+  .site-footer { border-top: 1px solid rgba(237,233,224,0.06); padding: 48px; flex-shrink: 0; background: #080807; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+  .footer-wordmark { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 19px; color: #EDE9E0; }
+  .footer-mark { width: 28px; height: 1px; background: #C4A96A; margin: 10px 0; opacity: 0.5; }
+  .footer-role { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A96A; }
+  .footer-tagline { font-size: 13px; font-weight: 300; color: rgba(237,233,224,0.35); max-width: 280px; line-height: 1.6; margin-top: 18px; }
+  .footer-nav { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .footer-nav a { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(237,233,224,0.35); text-decoration: none; transition: color 150ms; }
+  .footer-nav a:hover { color: #EDE9E0; }
+  .footer-divider { border: none; border-top: 1px solid rgba(237,233,224,0.05); margin: 0 0 28px; }
   .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(237,233,224,0.2); }
 
   /* Burger */
@@ -162,6 +171,7 @@
     <a href="index.html#services" class="nav-link">Services</a>
     <a href="index.html#about" class="nav-link">About</a>
     <a href="writing/index.html" class="nav-link">Writing</a>
+    <span class="nav-link active" style="cursor:default;">Get in touch</span>
   </nav>
   <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </header>
@@ -246,7 +256,24 @@
 </div>
 
 <footer class="site-footer">
-  <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+  <div class="footer-top">
+    <div>
+      <div class="footer-wordmark">Michelle Wright</div>
+      <div class="footer-mark"></div>
+      <div class="footer-role">Fractional CPO</div>
+      <div class="footer-tagline">Senior product leadership for regulated FinTechs that need the right thinking at the right moment.</div>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="writing/index.html">Writing</a>
+      <a href="https://www.linkedin.com/in/michellereimanwright/" target="_blank">LinkedIn →</a>
+    </nav>
+  </div>
+  <hr class="footer-divider">
+  <div>
+    <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+  </div>
 </footer>
 
 <script>
