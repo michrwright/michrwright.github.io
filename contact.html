@@ -126,10 +126,22 @@
   .site-footer { border-top: 1px solid rgba(237,233,224,0.06); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; background: #080807; }
   .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(237,233,224,0.2); }
 
+  /* Burger */
+  .burger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; position: relative; z-index: 101; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: #EDE9E0; border-radius: 2px; transition: all 250ms ease; }
+  .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(12,12,11,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 400; color: rgba(237,233,224,0.6); text-decoration: none; transition: color 150ms; }
+  .mobile-menu a:hover { color: #EDE9E0; }
+
   /* Responsive */
   @media (max-width: 768px) {
     .site-header { padding: 16px 24px; }
     .nav-links { display: none; }
+    .burger { display: flex; }
     .page-body { grid-template-columns: 1fr; }
     .left-panel { padding: 48px 24px; }
     .left-heading { font-size: 32px; }
@@ -151,7 +163,13 @@
     <a href="index.html#about" class="nav-link">About</a>
     <a href="writing/index.html" class="nav-link">Writing</a>
   </nav>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
+  <a href="writing/index.html">Writing</a>
+</div>
 
 <div class="page-body">
 
@@ -277,6 +295,23 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     errorEl.textContent = 'Something went wrong. Please email michrwright@gmail.com directly.';
     errorEl.style.display = 'block';
   }
+});
+</script>
+
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 </script>
 </body>

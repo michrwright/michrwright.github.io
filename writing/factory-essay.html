@@ -313,9 +313,22 @@
   }
   .footer-cta:hover { opacity: 1; }
 
+  /* Burger */
+  .burger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; position: relative; z-index: 101; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: #EDE9E0; border-radius: 2px; transition: all 250ms ease; }
+  .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(12,12,11,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 400; color: rgba(237,233,224,0.6); text-decoration: none; transition: color 150ms; }
+  .mobile-menu a:hover { color: #EDE9E0; }
+  .mobile-menu .mobile-cta { font-size: 16px; font-weight: 500; background: #C4A96A; color: #0C0C0B; padding: 14px 36px; border-radius: 8px; margin-top: 8px; }
+
   @media (max-width: 768px) {
     .site-header { padding: 16px 24px; }
     .site-header nav { display: none !important; }
+    .burger { display: flex; }
     .article-wrap { padding: 48px 24px 80px; }
     h1.article-title { font-size: 34px; }
     .article-lead { font-size: 18px; }
@@ -340,7 +353,14 @@
     <a href="index.html" class="header-link">Writing</a>
     <a href="../contact.html" class="nav-cta">Get in touch</a>
   </nav>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#services">Services</a>
+  <a href="../index.html#about">About</a>
+  <a href="index.html">Writing</a>
+  <a href="../contact.html" class="mobile-cta">Get in touch</a>
+</div>
 
 <!-- Article -->
 <main class="article-wrap">
@@ -481,8 +501,24 @@
 <!-- Footer -->
 <footer class="site-footer">
   <span class="footer-copy">© 2026 Michelle Wright</span>
-  <a href="#" class="footer-cta">Work with me →</a>
+  <a href="../contact.html" class="footer-cta">Work with me →</a>
 </footer>
 
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+</script>
 </body>
 </html>
