@@ -72,7 +72,24 @@
     background: radial-gradient(ellipse, rgba(196,169,106,0.20) 0%, transparent 65%);
     pointer-events: none;
   }
-  .article-list { position: relative; max-width: 860px; margin: 0 auto; padding: 0 48px 120px; }
+
+  /* Layout: sidebar + list */
+  .articles-layout { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 52px 120px; display: flex; gap: 64px; align-items: flex-start; }
+  .articles-sidebar { width: 190px; flex-shrink: 0; position: sticky; top: 88px; padding-top: 52px; }
+  .sidebar-heading { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(237,233,224,0.25); margin-bottom: 20px; }
+  .sidebar-filters { list-style: none; padding: 0; margin: 0; }
+  .sidebar-item { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(237,233,224,0.4); cursor: pointer; padding: 9px 0 9px 14px; border-left: 2px solid transparent; display: flex; justify-content: space-between; align-items: center; transition: color 150ms, border-color 150ms; user-select: none; }
+  .sidebar-item:hover { color: rgba(237,233,224,0.75); border-left-color: rgba(196,169,106,0.3); }
+  .sidebar-item.active { color: #C4A96A; border-left-color: #C4A96A; }
+  .sidebar-count { font-size: 11px; opacity: 0.55; margin-left: 8px; flex-shrink: 0; }
+  .article-list { position: relative; flex: 1; min-width: 0; }
+  .article-item.hidden { display: none; }
+
+  /* Mobile pills */
+  .mobile-filters { display: none; padding: 20px 24px 0; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .mobile-filters::-webkit-scrollbar { display: none; }
+  .mobile-pill { display: inline-flex; align-items: center; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 20px; border: 1px solid rgba(237,233,224,0.15); color: rgba(237,233,224,0.45); cursor: pointer; transition: all 150ms; margin-right: 8px; background: transparent; user-select: none; }
+  .mobile-pill.active { background: rgba(196,169,106,0.12); border-color: rgba(196,169,106,0.4); color: #C4A96A; }
 
   .article-item {
     position: relative;
@@ -130,9 +147,12 @@
     .page-hero { flex-direction: column; align-items: flex-start; gap: 16px; padding: 48px 24px 36px; }
     .page-hero h1 { font-size: 36px; }
     .page-hero p { max-width: 100%; font-size: 15px; }
-    .article-list { padding: 0 24px 80px; }
+    .articles-layout { display: block; padding: 0 0 80px; }
+    .articles-sidebar { display: none; }
+    .mobile-filters { display: block; }
+    .article-list { padding: 0 24px; }
     .article-item { grid-template-columns: 1fr; gap: 0; padding: 32px 0; }
-    .article-item:first-child { margin-top: 32px; }
+    .article-item:first-child { margin-top: 24px; }
     .article-date { margin-bottom: 10px; }
     .article-title { font-size: 22px; }
     .article-excerpt { font-size: 14px; }
@@ -169,9 +189,13 @@
   <p>On product leadership, AI, and the things most organisations haven't figured out yet.</p>
 </div>
 
-<div class="articles-section"><div class="article-list">
+<div class="articles-section">
+<div class="mobile-filters" id="mobile-filters"></div>
+<div class="articles-layout">
+  <aside class="articles-sidebar" id="articles-sidebar"></aside>
+  <div class="article-list" id="article-list">
 
-  <a href="factory-essay.html" class="article-item">
+  <a href="factory-essay.html" class="article-item" data-category="AI &amp; Product">
     <div class="article-date">Apr 2026</div>
     <div>
       <div class="article-meta-row"><div class="article-tag">AI &amp; Product</div><span class="article-read-time">10 min read</span></div>
@@ -181,7 +205,7 @@
     </div>
   </a>
 
-  <a href="customisation-trap.html" class="article-item">
+  <a href="customisation-trap.html" class="article-item" data-category="Product Strategy">
     <div class="article-date">Apr 2026</div>
     <div>
       <div class="article-meta-row"><div class="article-tag">Product Strategy</div><span class="article-read-time">9 min read</span></div>
@@ -191,7 +215,7 @@
     </div>
   </a>
 
-  <a href="build-problem.html" class="article-item">
+  <a href="build-problem.html" class="article-item" data-category="AI &amp; Product">
     <div class="article-date">Mar 2026</div>
     <div>
       <div class="article-meta-row"><div class="article-tag">AI &amp; Product</div><span class="article-read-time">7 min read</span></div>
@@ -201,7 +225,7 @@
     </div>
   </a>
 
-  <a href="series-c-series-a.html" class="article-item">
+  <a href="series-c-series-a.html" class="article-item" data-category="Product Strategy">
     <div class="article-date">Mar 2026</div>
     <div>
       <div class="article-meta-row"><div class="article-tag">Product Strategy</div><span class="article-read-time">11 min read</span></div>
@@ -211,7 +235,9 @@
     </div>
   </a>
 
-</div></div>
+  </div>
+</div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-top">
@@ -250,6 +276,93 @@ mobileMenu.querySelectorAll('a').forEach(a => {
     document.body.style.overflow = '';
   });
 });
+
+// ── Filter sidebar ──────────────────────────────
+(function() {
+  const items = Array.from(document.querySelectorAll('.article-item'));
+  const sidebar = document.getElementById('articles-sidebar');
+  const mobileCont = document.getElementById('mobile-filters');
+
+  // Build category map from data-category attributes
+  const counts = {};
+  items.forEach(item => {
+    const cat = item.dataset.category;
+    counts[cat] = (counts[cat] || 0) + 1;
+  });
+  const categories = Object.keys(counts);
+  const total = items.length;
+
+  // Filter logic
+  function filter(selected) {
+    items.forEach(item => {
+      const match = selected === 'all' || item.dataset.category === selected;
+      item.classList.toggle('hidden', !match);
+    });
+    // Update first-child border (first visible item)
+    let first = true;
+    items.forEach(item => {
+      if (!item.classList.contains('hidden')) {
+        item.style.borderTop = first ? '1px solid rgba(237,233,224,0.08)' : '';
+        first = false;
+      }
+    });
+  }
+
+  // Build desktop sidebar
+  const heading = document.createElement('div');
+  heading.className = 'sidebar-heading';
+  heading.textContent = 'Filter by topic';
+  sidebar.appendChild(heading);
+
+  const ul = document.createElement('ul');
+  ul.className = 'sidebar-filters';
+
+  function makeItem(label, count, value) {
+    const li = document.createElement('li');
+    li.className = 'sidebar-item' + (value === 'all' ? ' active' : '');
+    li.dataset.filter = value;
+    const name = document.createElement('span');
+    name.textContent = label;
+    const badge = document.createElement('span');
+    badge.className = 'sidebar-count';
+    badge.textContent = count;
+    li.appendChild(name);
+    li.appendChild(badge);
+    li.addEventListener('click', () => {
+      ul.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+      li.classList.add('active');
+      mobileCont.querySelectorAll('.mobile-pill').forEach(p => {
+        p.classList.toggle('active', p.dataset.filter === value);
+      });
+      filter(value);
+    });
+    return li;
+  }
+
+  ul.appendChild(makeItem('All articles', total, 'all'));
+  categories.forEach(cat => ul.appendChild(makeItem(cat, counts[cat], cat)));
+  sidebar.appendChild(ul);
+
+  // Build mobile pills
+  function makePill(label, value) {
+    const pill = document.createElement('button');
+    pill.className = 'mobile-pill' + (value === 'all' ? ' active' : '');
+    pill.dataset.filter = value;
+    pill.textContent = label;
+    pill.addEventListener('click', () => {
+      mobileCont.querySelectorAll('.mobile-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      ul.querySelectorAll('.sidebar-item').forEach(i => {
+        i.classList.toggle('active', i.dataset.filter === value);
+      });
+      filter(value);
+    });
+    return pill;
+  }
+
+  mobileCont.appendChild(makePill('All', 'all'));
+  categories.forEach(cat => mobileCont.appendChild(makePill(cat, cat)));
+})();
 </script>
 
 </body>
