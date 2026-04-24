@@ -161,9 +161,9 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .about-h2 { font-family: var(--serif); font-size: 38px; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 24px; }
 .about-body { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--cream-dim); margin-bottom: 16px; }
 .creds { margin-top: 36px; border-top: 1px solid rgba(237,233,224,0.08); }
-.cred-row { display: flex; gap: 20px; padding: 13px 0; border-bottom: 1px solid rgba(237,233,224,0.07); }
-.cred-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-muted); min-width: 100px; flex-shrink: 0; }
-.cred-val { font-size: 14px; font-weight: 300; color: var(--cream-dim); }
+.cred-row { display: flex; flex-direction: column; gap: 5px; padding: 16px 0; border-bottom: 1px solid rgba(237,233,224,0.07); }
+.cred-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+.cred-val { font-size: 15px; font-weight: 300; color: var(--cream-dim); }
 
 /* ── WRITING ── */
 .writing { position: relative; overflow: hidden; background: var(--surface); padding: 96px 52px; }
@@ -286,7 +286,8 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .services-grid { grid-template-columns: 1fr !important; padding: 0 24px; gap: 12px; }
   .ninety { padding: 64px 24px; }
   .ninety-h2 { font-size: 32px; }
-  .ninety-cols { grid-template-columns: 1fr; gap: 40px; }
+  .ninety-cols { display: flex; flex-direction: column; gap: 40px; }
+  .ninety-cols .ninety-col:first-child { order: 2; }
   .about { padding: 64px 24px; }
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-img { aspect-ratio: 4/3; max-height: 360px; }
@@ -484,6 +485,14 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
         </div>
         <span class="essay-tag">AI &amp; Product</span>
       </a>
+      <a href="writing/customisation-trap.html" class="essay fade-in">
+        <div class="essay-date">Apr 2026</div>
+        <div>
+          <div class="essay-title">The customisation trap: why saying yes gets easier and more expensive at the same time</div>
+          <div class="essay-excerpt">AI removed the old forcing function for saying no. Here's what accumulates in the gap — and what it looks like when a sophisticated buyer finds it.</div>
+        </div>
+        <span class="essay-tag">Product Strategy</span>
+      </a>
       <a href="writing/build-problem.html" class="essay fade-in">
         <div class="essay-date">Mar 2026</div>
         <div>
@@ -491,6 +500,14 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
           <div class="essay-excerpt">Andrew Ng's teams are now proposing one PM to 0.5 engineers. The new constraint isn't building — it's deciding what to build.</div>
         </div>
         <span class="essay-tag">AI &amp; Product</span>
+      </a>
+      <a href="writing/series-c-series-a.html" class="essay fade-in">
+        <div class="essay-date">Mar 2026</div>
+        <div>
+          <div class="essay-title">You raised a Series C. Your product team is still operating at Series A.</div>
+          <div class="essay-excerpt">The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.</div>
+        </div>
+        <span class="essay-tag">Product Strategy</span>
       </a>
     </div>
   </div>

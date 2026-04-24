@@ -85,7 +85,9 @@
   .article-item:hover .article-title { color: var(--gold); }
 
   .article-date { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #6C6C6C; padding-top: 6px; text-transform: uppercase; }
-  .article-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(196,169,106,0.1); border: 1px solid rgba(196,169,106,0.2); padding: 3px 9px; border-radius: var(--r-sm); display: inline-block; margin-bottom: 12px; }
+  .article-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .article-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(196,169,106,0.1); border: 1px solid rgba(196,169,106,0.2); padding: 3px 9px; border-radius: var(--r-sm); display: inline-block; }
+  .article-read-time { font-family: 'DM Sans', sans-serif; font-size: 11px; color: rgba(237,233,224,0.3); }
   .article-title { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--cream); margin-bottom: 12px; transition: color 200ms ease; text-wrap: pretty; }
   .article-excerpt { font-size: 15px; font-weight: 300; line-height: 1.65; color: var(--cream-dim); text-wrap: pretty; max-width: 580px; }
   .article-read { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--gold); margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; opacity: 0.7; }
@@ -172,7 +174,7 @@
   <a href="factory-essay.html" class="article-item">
     <div class="article-date">Apr 2026</div>
     <div>
-      <div class="article-tag">AI &amp; Product</div>
+      <div class="article-meta-row"><div class="article-tag">AI &amp; Product</div><span class="article-read-time">10 min read</span></div>
       <div class="article-title">We swapped the motor but nobody redesigned the factory</div>
       <div class="article-excerpt">93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build — and the operating model still hasn't caught up.</div>
       <div class="article-read">Read article →</div>
@@ -182,7 +184,7 @@
   <a href="customisation-trap.html" class="article-item">
     <div class="article-date">Apr 2026</div>
     <div>
-      <div class="article-tag">Product Strategy</div>
+      <div class="article-meta-row"><div class="article-tag">Product Strategy</div><span class="article-read-time">9 min read</span></div>
       <div class="article-title">The customisation trap: why saying yes gets easier and more expensive at the same time</div>
       <div class="article-excerpt">AI removed the old forcing function for saying no. Here's what accumulates in the gap — and what it looks like when a sophisticated buyer finds it.</div>
       <div class="article-read">Read article →</div>
@@ -192,7 +194,7 @@
   <a href="build-problem.html" class="article-item">
     <div class="article-date">Mar 2026</div>
     <div>
-      <div class="article-tag">AI &amp; Product</div>
+      <div class="article-meta-row"><div class="article-tag">AI &amp; Product</div><span class="article-read-time">7 min read</span></div>
       <div class="article-title">The build problem is solved. Product thinking is the new moat.</div>
       <div class="article-excerpt">Andrew Ng's teams are now proposing one PM to 0.5 engineers. The new constraint isn't building — it's deciding what to build.</div>
       <div class="article-read">Read article →</div>
@@ -202,7 +204,7 @@
   <a href="series-c-series-a.html" class="article-item">
     <div class="article-date">Mar 2026</div>
     <div>
-      <div class="article-tag">Product Strategy</div>
+      <div class="article-meta-row"><div class="article-tag">Product Strategy</div><span class="article-read-time">11 min read</span></div>
       <div class="article-title">You raised a Series C. Your product team is still operating at Series A.</div>
       <div class="article-excerpt">The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.</div>
       <div class="article-read">Read article →</div>
