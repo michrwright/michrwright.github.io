@@ -66,7 +66,7 @@
   .page-hero p { position: relative; font-size: 16px; line-height: 1.65; color: var(--cream-dim); max-width: 360px; flex-shrink: 0; }
 
   /* Article list */
-  .articles-section { position: relative; overflow: hidden; }
+  .articles-section { position: relative; overflow: clip; }
   .articles-section::before {
     content: ''; position: absolute; bottom: 5%; right: 0; width: 600px; height: 600px;
     background: radial-gradient(ellipse, rgba(196,169,106,0.20) 0%, transparent 65%);
@@ -74,8 +74,8 @@
   }
 
   /* Layout: sidebar + list */
-  .articles-layout { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 52px 120px; display: flex; gap: 64px; align-items: flex-start; }
-  .articles-sidebar { width: 190px; flex-shrink: 0; position: sticky; top: 88px; padding-top: 52px; }
+  .articles-layout { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 52px 120px 24px; display: flex; gap: 48px; align-items: flex-start; }
+  .articles-sidebar { width: 180px; flex-shrink: 0; position: sticky; top: 88px; padding-top: 52px; align-self: flex-start; }
   .sidebar-heading { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(237,233,224,0.25); margin-bottom: 20px; }
   .sidebar-filters { list-style: none; padding: 0; margin: 0; }
   .sidebar-item { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(237,233,224,0.4); cursor: pointer; padding: 9px 0 9px 14px; border-left: 2px solid transparent; display: flex; justify-content: space-between; align-items: center; transition: color 150ms, border-color 150ms; user-select: none; }
@@ -195,6 +195,7 @@
   <aside class="articles-sidebar" id="articles-sidebar"></aside>
   <div class="article-list" id="article-list">
 
+  <!-- ARTICLES-LIST-START -->
   <a href="factory-essay.html" class="article-item" data-category="AI &amp; Product">
     <div class="article-date">Apr 2026</div>
     <div>
@@ -234,7 +235,7 @@
       <div class="article-read">Read article →</div>
     </div>
   </a>
-
+  <!-- ARTICLES-LIST-END -->
   </div>
 </div>
 </div>
