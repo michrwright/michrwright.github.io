@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "factory-essay",
+    "title": "We swapped the motor but nobody redesigned the factory",
+    "category": "AI & Product",
+    "date": "April 2026",
+    "date_short": "Apr 2026",
+    "excerpt": "93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build — and the operating model still hasn't caught up.",
+    "lead": "93% of developers use AI coding tools. Team productivity has improved 10%.",
+    "lead_sub": "The bottleneck was never the build.",
+    "read_time": 10,
+    "status": "published",
+    "next_slug": "customisation-trap",
+    "next_category": "Product Strategy",
+    "next_title": "The customisation trap: why saying yes gets easier and more expensive at the same time"
+  },
+  {
+    "slug": "customisation-trap",
+    "title": "The customisation trap: why saying yes gets easier and more expensive at the same time",
+    "category": "Product Strategy",
+    "date": "April 2026",
+    "date_short": "Apr 2026",
+    "excerpt": "AI removed the old forcing function for saying no. Here's what accumulates in the gap — and what it looks like when a sophisticated buyer finds it.",
+    "lead": "AI has made building software cheap. So cheap you can throw code away and rebuild it.",
+    "lead_sub": "It sounds right, but it isn't.",
+    "read_time": 9,
+    "status": "published",
+    "next_slug": "build-problem",
+    "next_category": "AI & Product",
+    "next_title": "The build problem is solved. Product thinking is the new moat."
+  },
+  {
+    "slug": "build-problem",
+    "title": "The build problem is solved. Product thinking is the new moat.",
+    "category": "AI & Product",
+    "date": "March 2026",
+    "date_short": "Mar 2026",
+    "excerpt": "Andrew Ng's teams are now proposing one PM to 0.5 engineers. The new constraint isn't building — it's deciding what to build.",
+    "lead": "For twenty years, the hardest thing in tech was building the thing.",
+    "lead_sub": "That question no longer applies.",
+    "read_time": 7,
+    "status": "published",
+    "next_slug": "series-c-series-a",
+    "next_category": "Product Strategy",
+    "next_title": "You raised a Series C. Your product team is still operating at Series A."
+  },
+  {
+    "slug": "series-c-series-a",
+    "title": "You raised a Series C. Your product team is still operating at Series A.",
+    "category": "Product Strategy",
+    "date": "March 2026",
+    "date_short": "Mar 2026",
+    "excerpt": "The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.",
+    "lead": "I walked into a company and was given a list of commitments already made to the board. When I sat with the team delivering them, two things became clear: they weren't sure what they'd committed to, and nobody had defined what success looked like.",
+    "lead_sub": "The scaling crack that almost nobody names before it breaks.",
+    "read_time": 11,
+    "status": "published",
+    "next_slug": "factory-essay",
+    "next_category": "AI & Product",
+    "next_title": "We swapped the motor but nobody redesigned the factory"
+  }
+]

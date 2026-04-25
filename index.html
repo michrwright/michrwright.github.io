@@ -63,12 +63,39 @@ body { background: #0C0C0B; color: #EDE9E0; font-family: 'Nunito', sans-serif; f
 .btn-ghost:hover { background: var(--cream-ghost); }
 .btn-primary { background: var(--gold); color: #0C0C0B; }
 .btn-primary:hover { opacity: 0.88; }
-.btn-olive   { background: var(--gold); color: #0C0C0B; }
-.btn-olive:hover { opacity: 0.88; }
 .btn-outline { background: transparent; color: var(--cream-dim); border-color: rgba(237,233,224,0.2); }
 .btn-outline:hover { color: var(--cream); border-color: rgba(237,233,224,0.5); }
 .eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
 .inner { max-width: 1100px; margin: 0 auto; padding: 0 52px; }
+
+/* ── HERO LOAD ANIMATIONS ── */
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-eyebrow { animation: heroUp 1000ms cubic-bezier(0.4,0,0.15,1) 300ms both; }
+.hero-h1      { animation: heroUp 1100ms cubic-bezier(0.4,0,0.15,1) 550ms both; }
+.hero-sub     { animation: heroUp 1000ms cubic-bezier(0.4,0,0.15,1) 820ms both; }
+.hero-ctas    { animation: heroUp 900ms cubic-bezier(0.4,0,0.15,1) 1050ms both; }
+.hero-stats   { animation: heroUp 900ms cubic-bezier(0.4,0,0.15,1) 1250ms both; }
+
+/* ── SCROLL ANIMATIONS ── */
+[data-anim] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.15, 1);
+}
+[data-anim="up"]    { transform: translateY(24px); }
+[data-anim="left"]  { transform: translateX(-32px); }
+[data-anim="right"] { transform: translateX(32px); }
+[data-anim="scale"] { transform: scale(0.97) translateY(16px); }
+[data-anim].in-view { opacity: 1; transform: none; }
+
+[data-anim][data-delay="1"] { transition-delay: 150ms; }
+[data-anim][data-delay="2"] { transition-delay: 300ms; }
+[data-anim][data-delay="3"] { transition-delay: 450ms; }
+[data-anim][data-delay="4"] { transition-delay: 600ms; }
 
 /* ── HERO ── */
 .hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--base); }
@@ -120,8 +147,8 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .services-header { max-width: 1100px; margin: 0 auto 56px; padding: 0 52px; display: flex; justify-content: space-between; align-items: flex-end; position: relative; }
 .services-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); }
 .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; padding: 0 52px; max-width: 1100px; margin: 0 auto; position: relative; }
-.svc { background: var(--surface); padding: 44px 40px 48px; border-radius: var(--r-md); border: 1px solid rgba(237,233,224,0.06); transition: border-color 200ms ease, background 200ms ease; }
-.svc:hover { border-color: rgba(196,169,106,0.25); background: var(--surface-up); }
+.svc { background: var(--surface); padding: 44px 40px 48px; border-radius: var(--r-md); border: 1px solid rgba(237,233,224,0.06); transition: box-shadow 350ms ease, border-color 350ms ease, background 350ms ease; cursor: default; }
+.svc:hover { border-color: rgba(196,169,106,0.12); background: var(--surface-up); box-shadow: 0 0 60px rgba(196,169,106,0.09), 0 8px 32px rgba(0,0,0,0.3); }
 .svc-num { font-family: var(--sans); font-size: 11px; color: var(--gold); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 32px; opacity: 0.7; }
 .svc-title { font-family: var(--serif); font-size: 21px; color: var(--cream); line-height: 1.2; margin-bottom: 14px; }
 .svc-body { font-size: 14px; font-weight: 300; color: var(--cream-dim); line-height: 1.7; margin-bottom: 24px; }
@@ -144,8 +171,10 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .ninety-list li { font-size: 15px; font-weight: 300; color: var(--cream-dim); line-height: 1.7; padding: 14px 0 14px 32px; border-bottom: 1px solid rgba(237,233,224,0.07); position: relative; counter-increment: ninety-counter; }
 .ninety-list li:first-child { border-top: 1px solid rgba(237,233,224,0.07); }
 .ninety-list li::before { content: counter(ninety-counter, decimal-leading-zero); position: absolute; left: 0; top: 14px; font-family: var(--sans); font-size: 10px; font-weight: 500; color: rgba(196,169,106,0.4); letter-spacing: 0.05em; }
-.ninety-outcomes { display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0; }
-.ninety-outcomes li { font-size: 15px; font-weight: 400; color: var(--cream); line-height: 1.6; padding: 18px 20px; background: var(--base); border-radius: var(--r-md); border: 1px solid rgba(237,233,224,0.06); box-shadow: inset 3px 0 0 rgba(196,169,106,0.35); }
+/* Outcomes — matched to left column */
+.ninety-outcomes { display: flex; flex-direction: column; list-style: none; padding: 0; }
+.ninety-outcomes li { font-size: 15px; font-weight: 300; color: var(--cream-dim); line-height: 1.7; padding: 14px 0 14px 20px; border-bottom: 1px solid rgba(237,233,224,0.07); border-left: 2px solid rgba(196,169,106,0.22); }
+.ninety-outcomes li:first-child { border-top: 1px solid rgba(237,233,224,0.07); }
 
 /* ── ABOUT ── */
 .about { position: relative; overflow: hidden; background: var(--base); padding: 96px 52px; }
@@ -176,13 +205,15 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .writing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
 .writing-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); }
 .essay-list { display: flex; flex-direction: column; }
-.essay { display: grid; grid-template-columns: 72px 1fr auto; gap: 0 40px; padding: 36px 0; border-bottom: 1px solid rgba(237,233,224,0.08); text-decoration: none; color: inherit; }
+.essay { display: grid; grid-template-columns: 72px 1fr; gap: 0 40px; padding: 36px 0; border-bottom: 1px solid rgba(237,233,224,0.08); text-decoration: none; color: inherit; }
 .essay:first-child { border-top: 1px solid rgba(237,233,224,0.08); }
 .essay:hover .essay-title { color: var(--gold); }
-.essay-date { font-family: var(--sans); font-size: 11px; color: var(--mid-grey); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 4px; }
+.essay-date { font-family: var(--sans); font-size: 11px; color: var(--mid-grey); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 6px; }
+.essay-meta-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.essay-tag { font-family: var(--sans); font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; background: rgba(196,169,106,0.1); color: var(--gold); border-radius: var(--r-sm); border: 1px solid rgba(196,169,106,0.2); }
+.essay-read-time { font-family: var(--sans); font-size: 11px; color: var(--cream-muted); }
 .essay-title { font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; color: var(--cream); margin-bottom: 10px; transition: color 200ms ease; }
 .essay-excerpt { font-size: 14px; font-weight: 300; color: var(--cream-muted); line-height: 1.6; }
-.essay-tag { font-family: var(--sans); font-size: 10px; font-weight: 500; padding: 4px 10px; background: rgba(196,169,106,0.1); color: var(--gold); border-radius: var(--r-sm); border: 1px solid rgba(196,169,106,0.2); white-space: nowrap; align-self: start; margin-top: 4px; }
 
 /* ── TESTIMONIAL ── */
 .testimonial { position: relative; overflow: hidden; background: var(--base); padding: 88px 52px; text-align: center; }
@@ -219,46 +250,16 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 .footer-copy { font-family: var(--sans); font-size: 12px; color: rgba(237,233,224,0.18); }
 
 /* ── BURGER NAV ── */
-.burger {
-  display: none;
-  flex-direction: column; justify-content: center; align-items: center;
-  gap: 5px; width: 36px; height: 36px;
-  background: none; border: none; cursor: pointer; padding: 4px;
-}
-.burger span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--cream); border-radius: 2px;
-  transition: all 250ms ease;
-}
+.burger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; }
+.burger span { display: block; width: 22px; height: 1.5px; background: var(--cream); border-radius: 2px; transition: all 250ms ease; }
 .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .burger.open span:nth-child(2) { opacity: 0; }
 .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-.mobile-menu {
-  display: none;
-  position: fixed; inset: 0; z-index: 99;
-  background: rgba(12,12,11,0.97);
-  backdrop-filter: blur(16px);
-  flex-direction: column; align-items: center; justify-content: center;
-  gap: 32px;
-}
+.mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(12,12,11,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
 .mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: var(--sans); font-size: 22px; font-weight: 400;
-  color: var(--cream-dim); text-decoration: none;
-  transition: color 150ms;
-}
+.mobile-menu a { font-family: var(--sans); font-size: 22px; font-weight: 400; color: var(--cream-dim); text-decoration: none; transition: color 150ms; }
 .mobile-menu a:hover { color: var(--cream); }
-.mobile-menu .mobile-cta {
-  font-family: var(--sans); font-size: 16px; font-weight: 500;
-  background: var(--gold); color: #0C0C0B;
-  padding: 14px 36px; border-radius: var(--r-sm);
-  text-decoration: none; margin-top: 8px;
-}
-
-/* ── FADE IN ── */
-.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
-.fade-in.visible { opacity: 1; transform: none; }
+.mobile-menu .mobile-cta { font-family: var(--sans); font-size: 16px; font-weight: 500; background: var(--gold); color: #0C0C0B; padding: 14px 36px; border-radius: var(--r-sm); text-decoration: none; margin-top: 8px; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
@@ -296,7 +297,6 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .writing-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
   .writing-h2 { font-size: 32px; }
   .essay { grid-template-columns: 56px 1fr; gap: 0 16px; padding: 28px 0; }
-  .essay-tag { display: none; }
   .essay-title { font-size: 20px; }
   .testimonial { padding: 64px 24px; }
   .t-quote { font-size: 22px; }
@@ -307,8 +307,8 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
   .footer-links { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 16px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .inner { padding: 0 24px; }
+  [data-anim="left"], [data-anim="right"] { transform: translateY(24px); }
 }
-
 @media (max-width: 480px) {
   h1.hero-h1 { font-size: 36px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
@@ -324,7 +324,7 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 <!-- NAV -->
 <nav class="nav">
   <div>
-    <a href="index.html" class="nav-wordmark" style="text-decoration:none;">Michelle Wright</a>
+    <a href="index.html" class="nav-wordmark">Michelle Wright</a>
     <span class="nav-sub">Fractional CPO</span>
   </div>
   <div class="nav-links">
@@ -359,18 +359,18 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="stat-num">20+</div><div class="stat-label">Years in product</div></div>
-    <div class="hero-stat"><div class="stat-num">$50M</div><div class="stat-label">Revenue delivered at HSBC</div></div>
-    <div class="hero-stat"><div class="stat-num">24</div><div class="stat-label">Markets scaled at HSBC</div></div>
-    <div class="hero-stat"><div class="stat-num">$160M</div><div class="stat-label">Market opportunity opened</div></div>
+    <div class="hero-stat"><div class="stat-num" data-counter="20+">20+</div><div class="stat-label">Years in product</div></div>
+    <div class="hero-stat"><div class="stat-num" data-counter="$50M">$50M</div><div class="stat-label">Revenue delivered at HSBC</div></div>
+    <div class="hero-stat"><div class="stat-num" data-counter="24">24</div><div class="stat-label">Markets scaled at HSBC</div></div>
+    <div class="hero-stat"><div class="stat-num" data-counter="$160M">$160M</div><div class="stat-label">Market opportunity opened</div></div>
   </div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
   <div class="intro-inner">
-    <div class="fade-in intro-quote">"Somewhere between product and commercial outcomes, the connection has broken — the CRO has quietly stopped trusting the roadmap and the exec team knows something is wrong but <em>can't agree on what.</em>"</div>
-    <div class="fade-in">
+    <div data-anim="left" class="intro-quote">"Somewhere between product and commercial outcomes, the connection has broken — the CRO has quietly stopped trusting the roadmap and the exec team knows something is wrong but <em>can't agree on what.</em>"</div>
+    <div data-anim="right">
       <div class="intro-divider"></div>
       <div class="intro-body">
         <p>I diagnose fast. Whether it's a prioritisation problem, a commercial clarity problem, a structural one — or something the leadership team hasn't been able to name yet.</p>
@@ -384,10 +384,10 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-inner">
-    <div class="about-img fade-in">
+    <div class="about-img" data-anim="left">
       <img src="uploads/linked in photo.jpeg" alt="Michelle Wright">
     </div>
-    <div class="fade-in">
+    <div data-anim="right">
       <div class="about-eyebrow">About Michelle</div>
       <h2 class="about-h2">Twenty years in the room where the hard decisions get made.</h2>
       <p class="about-body">I spent two decades building products inside some of the world's largest financial institutions — HSBC, LSEG, Barclays, RBS. The last two years as CPO of a VC-backed FinTech, reporting to the CEO and board.</p>
@@ -405,26 +405,26 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 
 <!-- SERVICES -->
 <section class="services" id="services">
-  <div class="services-header">
+  <div class="services-header" data-anim="up">
     <div>
       <div class="eyebrow">What I do</div>
       <div class="services-h2">Three things I fix.<br>All of them commercial.</div>
     </div>
   </div>
   <div class="services-grid" style="grid-template-columns:repeat(3,1fr);">
-    <div class="svc fade-in">
+    <div class="svc" data-anim="up" data-delay="1">
       <div class="svc-num">01</div>
       <div class="svc-title">Commercial product positioning in regulated markets</div>
       <div class="svc-body">Reframes technical products so banks, insurers and asset managers understand the problems being solved. Translates technology into value framed around cost, risk, compliance and revenue. Removes AI and feature theatre that undermines credibility with regulated buyers.</div>
       <div class="svc-tags"><span class="svc-tag">Positioning</span><span class="svc-tag">Regulated markets</span><span class="svc-tag">Commercial framing</span></div>
     </div>
-    <div class="svc fade-in">
+    <div class="svc" data-anim="up" data-delay="2">
       <div class="svc-num">02</div>
       <div class="svc-title">Product revenue growth and cost discipline</div>
       <div class="svc-body">Reset feature-driven roadmaps into outcome-led portfolios. Link product investment directly to ARR, churn reduction, adoption or operating leverage.</div>
       <div class="svc-tags"><span class="svc-tag">ARR focus</span><span class="svc-tag">Churn</span><span class="svc-tag">Roadmap reset</span></div>
     </div>
-    <div class="svc fade-in">
+    <div class="svc" data-anim="up" data-delay="3">
       <div class="svc-num">03</div>
       <div class="svc-title">AI-first, product-led transformation</div>
       <div class="svc-body">Move from sales-led operating models and reactive delivery to a product function that drives revenue. Redesign the operating model. Build and coach high performing product teams with an AI-first mindset.</div>
@@ -436,12 +436,12 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 <!-- FIRST 90 DAYS -->
 <section class="ninety" id="ninety">
   <div class="ninety-inner">
-    <div class="fade-in ninety-header">
+    <div data-anim="up" class="ninety-header">
       <div class="eyebrow">How I work</div>
       <h2 class="ninety-h2">What changes in the first 90 days.</h2>
     </div>
-    <div class="ninety-cols fade-in">
-      <div class="ninety-col">
+    <div class="ninety-cols">
+      <div class="ninety-col" data-anim="left">
         <div class="ninety-col-label">Changes</div>
         <ul class="ninety-list">
           <li>Leadership has a shared, evidence-based view of what is creating value and what is not.</li>
@@ -452,7 +452,7 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
           <li>Delivery focus tightens, waste is reduced and execution risk is visibly lowered.</li>
         </ul>
       </div>
-      <div class="ninety-col">
+      <div class="ninety-col" data-anim="right">
         <div class="ninety-col-label">Typical outcomes</div>
         <ul class="ninety-outcomes">
           <li>Roadmaps reset around ARR, adoption, churn or cost levers rather than features.</li>
@@ -469,7 +469,7 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 <!-- WRITING -->
 <section class="writing">
   <div class="writing-inner">
-    <div class="writing-header fade-in">
+    <div class="writing-header" data-anim="up">
       <div>
         <div class="eyebrow">Writing</div>
         <div class="writing-h2">Thinking out loud,<br>in public.</div>
@@ -477,37 +477,49 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
       <a href="writing/index.html" class="btn btn-outline" style="font-size:13px;padding:10px 20px;">All articles</a>
     </div>
     <div class="essay-list">
-      <a href="writing/factory-essay.html" class="essay fade-in">
+      <a href="writing/factory-essay.html" class="essay" data-anim="up" data-delay="1">
         <div class="essay-date">Apr 2026</div>
         <div>
+          <div class="essay-meta-row">
+            <span class="essay-tag">AI &amp; Product</span>
+            <span class="essay-read-time">5 min read</span>
+          </div>
           <div class="essay-title">We swapped the motor but nobody redesigned the factory</div>
           <div class="essay-excerpt">93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build.</div>
         </div>
-        <span class="essay-tag">AI &amp; Product</span>
       </a>
-      <a href="writing/customisation-trap.html" class="essay fade-in">
+      <a href="writing/customisation-trap.html" class="essay" data-anim="up" data-delay="2">
         <div class="essay-date">Apr 2026</div>
         <div>
+          <div class="essay-meta-row">
+            <span class="essay-tag">Product Strategy</span>
+            <span class="essay-read-time">6 min read</span>
+          </div>
           <div class="essay-title">The customisation trap: why saying yes gets easier and more expensive at the same time</div>
           <div class="essay-excerpt">AI removed the old forcing function for saying no. Here's what accumulates in the gap — and what it looks like when a sophisticated buyer finds it.</div>
         </div>
-        <span class="essay-tag">Product Strategy</span>
       </a>
-      <a href="writing/build-problem.html" class="essay fade-in">
+      <a href="writing/build-problem.html" class="essay" data-anim="up" data-delay="3">
         <div class="essay-date">Mar 2026</div>
         <div>
+          <div class="essay-meta-row">
+            <span class="essay-tag">AI &amp; Product</span>
+            <span class="essay-read-time">4 min read</span>
+          </div>
           <div class="essay-title">The build problem is solved. Product thinking is the new moat.</div>
           <div class="essay-excerpt">Andrew Ng's teams are now proposing one PM to 0.5 engineers. The new constraint isn't building — it's deciding what to build.</div>
         </div>
-        <span class="essay-tag">AI &amp; Product</span>
       </a>
-      <a href="writing/series-c-series-a.html" class="essay fade-in">
+      <a href="writing/series-c-series-a.html" class="essay" data-anim="up" data-delay="4">
         <div class="essay-date">Mar 2026</div>
         <div>
+          <div class="essay-meta-row">
+            <span class="essay-tag">Product Strategy</span>
+            <span class="essay-read-time">7 min read</span>
+          </div>
           <div class="essay-title">You raised a Series C. Your product team is still operating at Series A.</div>
           <div class="essay-excerpt">The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.</div>
         </div>
-        <span class="essay-tag">Product Strategy</span>
       </a>
     </div>
   </div>
@@ -515,16 +527,16 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 
 <!-- TESTIMONIAL -->
 <section class="testimonial">
-  <div class="t-quote">"Michelle doesn't just diagnose the problem — she lands the decisions that everyone else has been avoiding. That's rare at any level."</div>
-  <div class="t-attr">CEO · PE-backed B2B FinTech · London</div>
+  <div class="t-quote" data-anim="scale">"Michelle doesn't just diagnose the problem — she lands the decisions that everyone else has been avoiding. That's rare at any level."</div>
+  <div class="t-attr" data-anim="up" data-delay="1">CEO · PE-backed B2B FinTech · London</div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <div class="eyebrow fade-in" style="text-align:center;">Ready to talk?</div>
-  <div class="cta-h2 fade-in">If product is where your growth thesis is getting stuck.</div>
-  <p class="cta-sub fade-in">I work directly with CEOs and boards. If you're in regulated financial services and product isn't driving the outcomes it should, I'm easy to reach.</p>
-  <a href="contact.html" class="btn btn-primary" style="font-size:15px;padding:14px 32px;">Get in touch</a>
+  <div class="eyebrow" data-anim="up" style="text-align:center;">Ready to talk?</div>
+  <div class="cta-h2" data-anim="up" data-delay="1">If product is where your growth thesis is getting stuck.</div>
+  <p class="cta-sub" data-anim="up" data-delay="2">I work directly with CEOs and boards. If you're in regulated financial services and product isn't driving the outcomes it should, I'm easy to reach.</p>
+  <a href="contact.html" class="btn btn-primary" data-anim="up" data-delay="3" style="font-size:15px;padding:14px 32px;">Get in touch</a>
 </section>
 
 <!-- FOOTER -->
@@ -554,11 +566,49 @@ h1.hero-h1 { font-family: var(--serif); font-size: 76px; font-weight: 400; line-
 </footer>
 
 <script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+// ── SCROLL ANIMATIONS ──
+const animObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      animObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
 
+document.querySelectorAll('[data-anim]').forEach(el => animObserver.observe(el));
+
+// ── STAT COUNTERS ──
+function animateCounter(el) {
+  const raw = el.dataset.counter;
+  const prefix = raw.match(/^[^\d]*/)[0];
+  const suffix = raw.match(/[^\d]*$/)[0];
+  const target = parseFloat(raw.replace(/[^\d.]/g, ''));
+  if (isNaN(target)) return;
+  const duration = 1600;
+  let startTime = null;
+  function tick(t) {
+    if (!startTime) startTime = t;
+    const progress = Math.min((t - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = prefix + (progress < 1 ? Math.floor(eased * target) : target) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+// ── MOBILE MENU ──
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
 burger.addEventListener('click', () => {
