@@ -1,5 +1,20 @@
 [
   {
+    "slug": "restructuring-for-outcomes",
+    "title": "Restructuring for outcomes: the operating model transformation",
+    "category": "Operating Model",
+    "date": "February 2026",
+    "date_short": "Feb 2026",
+    "excerpt": "Most organisations that say they want to be product-led have renamed their teams but not changed their thinking. This is a framework for making the transformation actually work — from squad design and outcome ownership to C-suite alignment.",
+    "lead": "Product-led is not a team design. It is an operating model — and making it work requires the whole organisation to change, not just the product team.",
+    "lead_sub": "A framework for the transformation, from first principles to the leadership contract that makes it stick.",
+    "read_time": 16,
+    "status": "published",
+    "next_slug": "factory-essay",
+    "next_category": "AI & Product",
+    "next_title": "The build problem is solved. So what are we doing?"
+  },
+  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
     "category": "AI & Product",
