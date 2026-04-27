@@ -1,20 +1,5 @@
 [
   {
-    "slug": "restructuring-outcomes-part-2",
-    "title": "Restructuring for outcomes: part two — when the road gets rough",
-    "category": "Operating Model",
-    "date": "April 2026",
-    "date_short": "Apr 2026",
-    "excerpt": "The model is only as good as your ability to navigate what gets in the way. Nine failure modes that appear in almost every product transformation, in variations of the same pattern.",
-    "lead": "Part one covered the model — what the structure should look like and why. This part is about what gets in the way.",
-    "lead_sub": "Part two of three: nine failure modes that appear in almost every product transformation.",
-    "read_time": 8,
-    "status": "published",
-    "next_slug": "factory-essay",
-    "next_category": "Operating Model",
-    "next_title": "We swapped the motor but nobody redesigned the factory"
-  },
-  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
     "category": "Operating Model",
@@ -57,7 +42,7 @@
     "status": "published",
     "next_slug": "restructuring-for-outcomes",
     "next_category": "Operating Model",
-    "next_title": "Restructuring for outcomes: the operating model transformation"
+    "next_title": "Restructuring for outcomes: part one — the operating model"
   },
   {
     "slug": "build-problem",
@@ -75,6 +60,21 @@
     "next_title": "You raised a Series C. Your product team is still operating at Series A."
   },
   {
+    "slug": "restructuring-outcomes-part-2",
+    "title": "Restructuring for outcomes: part two — when the road gets rough",
+    "category": "Operating Model",
+    "date": "February 2026",
+    "date_short": "Feb 2026",
+    "excerpt": "The model is only as good as your ability to navigate what gets in the way. Nine failure modes that appear in almost every product transformation, in variations of the same pattern.",
+    "lead": "Part one covered the model — what the structure should look like and why. This part is about what gets in the way.",
+    "lead_sub": "Part two of three: nine failure modes that appear in almost every product transformation.",
+    "read_time": 8,
+    "status": "published",
+    "next_slug": "factory-essay",
+    "next_category": "Operating Model",
+    "next_title": "We swapped the motor but nobody redesigned the factory"
+  },
+  {
     "slug": "restructuring-for-outcomes",
     "title": "Restructuring for outcomes: part one — the operating model",
     "category": "Operating Model",
@@ -85,8 +85,8 @@
     "lead_sub": "Part one of three: squad design, roles, and the engineering foundation.",
     "read_time": 11,
     "status": "published",
-    "next_slug": "factory-essay",
+    "next_slug": "restructuring-outcomes-part-2",
     "next_category": "Operating Model",
-    "next_title": "We swapped the motor but nobody redesigned the factory"
+    "next_title": "Restructuring for outcomes: part two — when the road gets rough"
   }
 ]
