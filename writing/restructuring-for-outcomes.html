@@ -10,7 +10,7 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Restructuring for outcomes: the operating model transformation — Michelle Wright</title>
+<title>Restructuring for outcomes: part one — the operating model — Michelle Wright</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; }
@@ -87,7 +87,7 @@
     background: rgba(140,106,42,0.1); border: 1px solid rgba(140,106,42,0.2);
     padding: 4px 10px; border-radius: 8px;
   }
-  .meta-date { font-size: 12px; color: #8C8C8C; }
+  .meta-date { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
   .meta-read { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
 
   h1.article-title {
@@ -121,13 +121,6 @@
     text-transform: uppercase; color: #8C6A2A; margin: 40px 0 12px;
   }
 
-  .pull-stat { border-left: 2px solid #5B6335; padding: 4px 0 4px 24px; margin: 36px 0; }
-  .pull-stat-num {
-    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
-    font-size: 40px; color: #2E2E2E; line-height: 1; margin-bottom: 6px;
-  }
-  .pull-stat-label { font-size: 14px; color: #8C8C8C; line-height: 1.5; }
-
   .pullquote {
     font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
     font-size: 24px; font-style: italic; line-height: 1.55; color: #2E2E2E;
@@ -144,13 +137,12 @@
   }
   .function-block p { font-size: 15px; font-weight: 300; line-height: 1.7; color: #2E2E2E; margin: 0; text-wrap: pretty; }
   .function-block p + p { margin-top: 12px; }
-  .principles-list { margin: 0 0 24px 0; padding-left: 20px; }
-  .principles-list li { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.7; color: #2E2E2E; margin-bottom: 12px; }
-  .principles-list li::marker { color: #8C6A2A; }
+
   .article-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; }
   .article-table th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8C6A2A; padding: 10px 14px; border-bottom: 2px solid rgba(140,106,42,0.25); }
   .article-table td { padding: 10px 14px; border-bottom: 1px solid rgba(46,46,46,0.08); color: #2E2E2E; font-weight: 300; line-height: 1.5; vertical-align: top; }
   .article-table tr:last-child td { border-bottom: none; }
+
   .inline-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8C6A2A; margin-right: 6px; }
 
   .byline {
@@ -163,7 +155,7 @@
     filter: grayscale(100%) contrast(1.05) brightness(0.95);
   }
   .byline-name { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 17px; color: #2E2E2E; margin-bottom: 3px; }
-  .byline-role { font-size: 12px; color: #8C8C8C; letter-spacing: 0.02em; }
+  .byline-role { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; letter-spacing: 0.02em; }
 
   .article-share { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(46,46,46,0.12); display: flex; align-items: center; gap: 16px; }
   .share-label { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(46,46,46,0.4); }
@@ -216,7 +208,6 @@
     h1.article-title { font-size: 34px; }
     .article-lead { font-size: 18px; }
     .pullquote { font-size: 20px; padding-left: 20px; }
-    .pull-stat-num { font-size: 32px; }
     .function-block { padding: 20px 20px; }
     .site-footer { padding: 32px 24px; }
     .footer-top { flex-direction: column; gap: 32px; }
@@ -258,24 +249,25 @@
   <div class="article-meta">
     <span class="meta-tag">Operating Model</span>
     <span class="meta-date">February 2026</span>
-    <span class="meta-read">16 min read</span>
+    <span class="meta-read">11 min read</span>
   </div>
 
-  <h1 class="article-title">Restructuring for outcomes: the operating model transformation</h1>
+  <h1 class="article-title">Restructuring for outcomes: part one — the operating model</h1>
 
   <p class="article-lead">Product-led is not a team design. It is an operating model — and making it work requires the whole organisation to change, not just the product team.</p>
-  <p class="article-lead-sub">A framework for the transformation, from first principles to the leadership contract that makes it stick.</p>
+  <p class="article-lead-sub">Part one of three: squad design, roles, and the engineering foundation.</p>
 
   <hr class="rule-olive">
 
   <div class="article-body">
+
     <p>A few weeks ago I was asked to spend a few hours with a team inside a large financial services institution. They were trying to move from a project and change delivery model to something more product-led — and they wanted a second opinion on how they were thinking about their team structure.</p>
 
     <p>What was supposed to be a short conversation ended up being something I kept thinking about afterward. Not because the situation was unusual, but because it was so recognisably familiar. The patterns I saw were the same ones I have encountered in multiple organisations making this transition. The language had changed — squads, product owners, agile ceremonies — but the underlying logic had not. Priorities still flowed top-down. Teams were still accountable for delivery, not outcomes. The structure had been renamed. The thinking had not.</p>
 
     <p>I wrote this piece partly to capture that thinking clearly, and partly because I suspect the same questions are being asked in a lot of organisations right now. It draws on frameworks I have found genuinely useful, what I have seen work, what I have seen fail, and how I approach these transitions when I am brought in to help.</p>
 
-    <p>It is not a prescription. Every organisation is different, and the right structure always depends on context. But the principles that make a product operating model actually work — rather than just look right on a slide — are more consistent than people think.</p>
+    <p>Think of it as a framework, not a formula. Every organisation is different, and the right structure always depends on context. But the principles that make a product operating model actually work — rather than just look right on a slide — are more consistent than people think.</p>
 
     <hr class="rule">
 
@@ -293,13 +285,7 @@
 
     <p>The most consistent difference I see between product transformations that take hold and those that stall is whether the CEO has genuinely committed to a different way of running the company. Not just approving a restructure but personally changing how they engage with product decisions, and holding their leadership team to the same standard.</p>
 
-    <p>Without it, the transformation hits a ceiling almost immediately. Executives revert to raising feature requests because nobody above them has signalled they should stop. Finance continues to fund projects rather than teams because the budgeting model has not changed. The product team gets restructured but the surrounding organisation continues to operate on project logic, and squads cannot move because they are still dependent on functions that have not changed.</p>
-
-    <p>With it, the whole system aligns. The CEO sets outcome goals and holds the C-suite to them. The finance model follows. The culture shifts because the person at the top is modelling the new behaviour and backing the squads when the old patterns push back.</p>
-
-    <div class="pullquote">I have seen well-designed product structures fail because the CEO remained a feature requester. I have seen imperfect structures succeed because the CEO was fully bought in and willing to hold the line when the model was challenged. The CEO is not the CPO's sponsor. They are the transformation's sponsor.</div>
-
-    <p>In most organisations strategic priorities flow from the business via roadmaps, translated into actionable delivery by a programme and technology function. Product teams sit within that framework as execution units. They are accountable for delivery. Nobody is accountable for outcomes.</p>
+    <p>I have seen well-designed product structures fail because the CEO remained a feature requester. I have seen imperfect structures succeed because the CEO was fully bought in and willing to hold the line when the model was challenged. The CEO is not the CPO's sponsor. They are the transformation's sponsor.</p>
 
     <p>Three specific patterns appear at this stage.</p>
 
@@ -321,7 +307,7 @@
 
     <p>This is sometimes called agile governance. It is more accurately described as waterfall with better terminology. In an empowered product organisation, the Product Manager owns prioritisation. The Engineering Lead owns delivery. The team self-organises. Agile coaching has genuine value when it is teaching teams to reach that state — and none at all when it is coordinating a process those teams should be owning.</p>
 
-    <div class="pullquote"><strong>The number of agile governance roles in an organisation is inversely proportional to how much it trusts its product teams.</strong> A large agile governance layer is not a sign of agile maturity. It is a sign that the transition has stalled.</div>
+    <blockquote class="pullquote">The number of agile governance roles in an organisation is inversely proportional to how much it trusts its product teams. A large agile governance layer is not a sign of agile maturity. It is a sign that the transition has stalled.</blockquote>
 
     <h3>3. Project roles inside product squads</h3>
 
@@ -332,11 +318,29 @@
     <p>A Product Owner in the SAFe sense is a backlog administrator — someone who receives priorities from above and translates them into stories. A Product Manager in the empowered sense is someone who talks to users, forms hypotheses, runs experiments, and decides what to build based on evidence. The gap between those two roles is the gap between a delivery team and a product team.</p>
 
     <table class="article-table">
-      <thead><tr><th>Role typically seen</th><th>What it signals</th><th>What it should be</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Role typically seen</th>
+          <th>What it signals</th>
+          <th>What it should be</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>Product Owner</td><td>Priorities come from above; PO translates them into stories</td><td>Product Manager: owns the outcome, owns discovery, challenges what to build</td></tr>
-        <tr><td>Agile Delivery Manager</td><td>Delivery is managed separately from the people doing it</td><td>Engineering Lead: a senior engineer who also leads — one role, not two</td></tr>
-        <tr><td>Business Analyst</td><td>Requirements are captured from stakeholders and handed to engineers</td><td>Removed: the PM talks to users directly and the team builds from that understanding</td></tr>
+        <tr>
+          <td><strong>Product Owner</strong></td>
+          <td>Priorities come from above; PO translates them into stories</td>
+          <td>Product Manager: owns the outcome, owns discovery, challenges what to build</td>
+        </tr>
+        <tr>
+          <td><strong>Agile Delivery Manager</strong></td>
+          <td>Delivery is managed separately from the people doing it</td>
+          <td>Engineering Lead: a senior engineer who also leads — one role, not two</td>
+        </tr>
+        <tr>
+          <td><strong>Business Analyst</strong></td>
+          <td>Requirements are captured from stakeholders and handed to engineers</td>
+          <td>Removed: the PM talks to users directly and the team builds from that understanding</td>
+        </tr>
       </tbody>
     </table>
 
@@ -344,7 +348,7 @@
 
     <h2>My framework for the right model</h2>
 
-    <p>The alternative is not complicated in principle, though it takes discipline to implement in organisations with real governance, regulatory and political constraints. It has five components.</p>
+    <p>The alternative is not complicated in principle, though it takes discipline to implement in organisations with real governance, regulatory and political constraints. It has three components.</p>
 
     <h3>1. Name outcomes, not features</h3>
 
@@ -352,37 +356,74 @@
 
     <p>This matters because it changes everything downstream: what you measure, what you hire for, what the squad is accountable for, and how you know if it is working. A squad called "Data Platform" owns technology. A squad called "Decision Intelligence" owns the quality of decisions being made across the business. Those are fundamentally different mandates.</p>
 
-    <div class="pullquote"><em>"If you cannot state what your squad is trying to change in the world in one sentence, you do not yet have outcome ownership. You have a delivery team with a new name."</em></div>
+    <blockquote class="pullquote">If you cannot state what your squad is trying to change in the world in one sentence, you do not yet have outcome ownership. You have a delivery team with a new name.</blockquote>
 
-    <h3>2. Three types of squads, clearly separated</h3>
-
-    <p>This framework comes from Team Topologies (Skelton and Pais) and is the most useful structural model for this kind of transition.</p>
+    <h3>2. Two types of squads</h3>
 
     <table class="article-table">
-      <thead><tr><th>Squad type</th><th>Purpose</th><th>Examples</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Squad type</th>
+          <th>Purpose</th>
+          <th>Examples</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><strong>Stream-aligned</strong></td><td>Owns a revenue stream or outcome end to end — discovery, delivery, measurement. The majority of squads in a healthy product org.</td><td>Customer experience, workforce efficiency, process acceleration, growth</td></tr>
-        <tr><td><strong>Platform</strong></td><td>Provides capabilities that stream-aligned squads self-serve from. Removes dependencies rather than creating them.</td><td>Cloud infrastructure, data and analytics, AI tooling, API layer</td></tr>
-        <tr><td><strong>Enabling</strong></td><td>Helps other squads adopt new practices or navigate complexity they cannot manage alone. Temporary by nature.</td><td>A delivery practice champion, a compliance navigator, a ways of working coach</td></tr>
+        <tr>
+          <td><strong>Revenue squads</strong></td>
+          <td>Own an outcome end to end — discovery, delivery, measurement. The majority of squads in a healthy product org.</td>
+          <td>Customer experience, growth, process efficiency, workforce automation</td>
+        </tr>
+        <tr>
+          <td><strong>Platform and data squads</strong></td>
+          <td>Serve revenue squads by providing shared capabilities. Remove dependencies rather than create them.</td>
+          <td>Cloud infrastructure, data and analytics, AI tooling, API layer, compliance capability</td>
+        </tr>
       </tbody>
     </table>
 
-    <h3>3. What goes inside a stream-aligned squad</h3>
+    <p>Champions sit outside both squad types. They are individuals, not teams — people who hold the institutional knowledge that squads need to navigate governance, regulatory requirements, and organisational complexity. They guide. They do not gate.</p>
+
+    <h3>2.1 What goes inside a revenue squad</h3>
 
     <p>An outcome squad is built around three distinct disciplines: product, design, and engineering. Each of these is a full-time commitment. Not half a person shared across squads. Not someone who covers the role alongside something else. A squad without a dedicated PM has nobody owning the outcome. A squad without a dedicated designer has nobody owning usability. Engineers split across multiple squads are not a squad — they are individuals with divided attention and no clear accountability.</p>
 
     <p>The instinct to share specialist roles is understandable, especially early in building a product function. A designer supporting three squads looks efficient on paper. In practice it means every squad is waiting for design input, design reviews become the bottleneck in every sprint, and the designer has no continuity with any single outcome. Shared roles create shared accountability, which is functionally the same as no accountability.</p>
 
-    <p>The table below shows the five to six roles an outcome squad needs, and the specific risk each one is there to catch. The framing comes from Marty Cagan's Empowered — not because the titles matter, but because the risks do.</p>
-
     <table class="article-table">
-      <thead><tr><th>Role</th><th>What they own</th><th>Risk they cover</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>What they own</th>
+          <th>Risk they cover</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><strong>Product Manager</strong></td><td>What to build and why. Discovery, prioritisation, outcome tracking. Owns the outcome metric.</td><td>Value: will this change behaviour? Viability: does it work for the business?</td></tr>
-        <tr><td><strong>Designer</strong></td><td>User experience for the squad's capability area, not just UI.</td><td>Usability: can people use it?</td></tr>
-        <tr><td><strong>Engineering Lead</strong></td><td>How to build it. A senior engineer who leads delivery — not a separate management layer.</td><td>Feasibility: can we build it?</td></tr>
-        <tr><td><strong>Engineers</strong></td><td>Building.</td><td>Feasibility</td></tr>
-        <tr><td><strong>QA Engineer</strong></td><td>Writes automated tests, quality built in throughout — not a sign-off gate at release.</td><td>Feasibility</td></tr>
+        <tr>
+          <td><strong>Product Manager</strong></td>
+          <td>What to build and why. Discovery, prioritisation, outcome tracking. Owns the outcome metric.</td>
+          <td>Value: will this change behaviour? Viability: does it work for the business?</td>
+        </tr>
+        <tr>
+          <td><strong>Designer</strong></td>
+          <td>User experience for the squad's capability area, not just UI.</td>
+          <td>Usability: can people use it?</td>
+        </tr>
+        <tr>
+          <td><strong>Engineering Lead</strong></td>
+          <td>How to build it. A senior engineer who leads delivery — not a separate management layer.</td>
+          <td>Feasibility: can we build it?</td>
+        </tr>
+        <tr>
+          <td><strong>Engineers</strong></td>
+          <td>Building.</td>
+          <td>Feasibility</td>
+        </tr>
+        <tr>
+          <td><strong>QA Engineer</strong></td>
+          <td>Writes automated tests, quality built in throughout — not a sign-off gate at release.</td>
+          <td>Feasibility</td>
+        </tr>
       </tbody>
     </table>
 
@@ -390,26 +431,40 @@
 
     <p>Discovery is the process of figuring out what to build before building it. A PM doing discovery is talking directly to users: observing how they work, understanding where they get stuck, testing whether a proposed solution actually changes their behaviour. They form a hypothesis, run a lightweight experiment, and let the evidence shape what goes into the next sprint. It is the opposite of collecting requirements. Instead of asking stakeholders what they want, the PM is diagnosing what users actually need. The distinction sounds subtle. The output is completely different.</p>
 
-    <h3>4. A thin champion layer for governance and institutional knowledge</h3>
+    <h3>2.2 The champion layer</h3>
 
     <p>Regulated industries have real governance requirements. There are boards to go to, risk committees to satisfy, compliance steps to follow. Pretending these do not exist produces squads that cannot ship. Building a large central team to manage them produces squads that cannot self-serve.</p>
 
-    <p>The solution is a thin layer of champions: individuals (not teams) who hold the institutional knowledge and make the path clear for squads. They navigate. The squad executes.</p>
-
-    <p>The champion is <strong>accountable</strong> for the standard and the guidance. The squad is <strong>responsible</strong> for the execution.</p>
-
-    <p>Champions sit outside the squads. They are not a coordination layer. They are the people who know which form to fill in, which board to go to, and what will get rejected if you phrase it the wrong way. That knowledge guides the squads. It does not gate them.</p>
+    <p>The solution is a thin layer of champions: individuals (not teams) who hold the institutional knowledge and make the path clear for squads. They navigate. The squad executes. The champion is accountable for the standard and the guidance. The squad is responsible for the execution.</p>
 
     <table class="article-table">
-      <thead><tr><th>Champion role (1 person each)</th><th>What they hold</th><th>What the squad does</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Champion role (1 person each)</th>
+          <th>What they hold</th>
+          <th>What the squad does</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>Adoption Champion</td><td>Rollout strategy, market sequencing, stakeholder navigation</td><td>Delivers its own onboarding activity for its capability area</td></tr>
-        <tr><td>Delivery Practice Champion</td><td>Ways of working standards, retrospective facilitation</td><td>Self-organises and continuously improves within those standards</td></tr>
-        <tr><td>Governance and Compliance Navigator</td><td>Regulatory requirements, risk committee processes, approval steps</td><td>Completes the approvals, fills in the forms, attends the boards</td></tr>
+        <tr>
+          <td><strong>Adoption Champion</strong></td>
+          <td>Rollout strategy, market sequencing, stakeholder navigation</td>
+          <td>Delivers its own onboarding activity for its capability area</td>
+        </tr>
+        <tr>
+          <td><strong>Delivery Practice Champion</strong></td>
+          <td>Ways of working standards, retrospective facilitation</td>
+          <td>Self-organises and continuously improves within those standards</td>
+        </tr>
+        <tr>
+          <td><strong>Governance and Compliance Navigator</strong></td>
+          <td>Regulatory requirements, risk committee processes, approval steps</td>
+          <td>Completes the approvals, fills in the forms, attends the boards</td>
+        </tr>
       </tbody>
     </table>
 
-    <h3>5. Engineering practices as the foundation</h3>
+    <h3>3. Engineering practices as the foundation</h3>
 
     <p>A product operating model cannot function without the engineering practices that support it. The most important of these is CI/CD: Continuous Integration and Continuous Deployment.</p>
 
@@ -417,123 +472,15 @@
 
     <p>CI/CD means automated testing runs on every code change. Deployment is automated. Releases are small and frequent. The risk of any one release is low. And the roles that exist to manage the risk of big releases — Release Managers, UAT Testers — become unnecessary.</p>
 
-    <div class="pullquote"><strong>Every UAT Tester and Release Manager on the roster is an ongoing cost of not having invested in automated pipelines.</strong> In regulated environments, the pipelines need to be built to meet compliance requirements — which is a one-time investment against a recurring overhead.</div>
+    <blockquote class="pullquote">Every UAT Tester and Release Manager on the roster is an ongoing cost of not having invested in automated pipelines. In regulated environments, the pipelines need to be built to meet compliance requirements — which is a one-time investment against a recurring overhead.</blockquote>
 
     <hr class="rule">
 
-    <h2>How the C-suite connects to the model</h2>
+    <h2>A framework, not the finish line</h2>
 
-    <p>In a scaling company, the C-suite relationship with product is one of the most important things to get right — and one of the most commonly broken. The default pattern is executives raising feature requests, sitting in roadmap reviews, and measuring the product team on delivery output. The product model requires a different contract.</p>
+    <p>Every organisation arrives at this transition from a different starting point — with existing teams, existing debt, existing politics, and existing customers who cannot wait for the structure to be perfect before they are served. Nobody is building this on a greenfield. The goal is not to implement it perfectly. It is to move in the right direction, deliberately, and to keep optimising as you go.</p>
 
-    <p>The shift is from C-suite as feature requestors to C-suite as outcome sponsors. Each executive owns a set of business outcomes. Those outcomes become the mandates for squads. The squads decide how to achieve them. The CPO is the interface — translating strategic goals into squad mandates, and translating squad capability into strategic options for leadership.</p>
-
-    <h3>Chief Revenue Officer</h3>
-
-    <p>The CRO owns the revenue targets that become outcome metrics for acquisition, conversion, and retention squads. In a scaling company, the CRO is often the most influential voice on what gets built — and the most likely to bypass the PM and raise requests directly to engineering.</p>
-
-    <p>The product model reframes this relationship: the CRO defines what needs to move (new business rate, renewal rate, time to close) and shares pipeline intelligence with PMs — what is blocking deals, what customers are asking for, where the conversion drop-off is. The PM takes that signal into discovery and decides how to respond. The CRO does not own the roadmap. They own the goal.</p>
-
-    <p>The CRO is also a key voice in the "viability" risk check — if a feature does not support the commercial model, the CRO should catch it early, not at launch.</p>
-
-    <p>One assumption worth challenging here: the CRO is not the voice of the customer. The CRO is the voice of the buyer. In B2B, those are frequently different people. The economic decision-maker who signs the contract is often not the person who uses the product day to day. The CRO knows what closes deals. The PM needs to know what serves users. Those two things are correlated but they are not the same — treating the CRO as a proxy for the customer will steer the product in the wrong direction.</p>
-
-    <div class="pullquote">A sales team that has been making commitments to close contracts is not giving you a neutral read on what users need. They are giving you a read on what buyers said during a negotiation. Market intelligence from the CRO is genuinely valuable — it is a signal, not a source of truth. The PM's job is to hold both: take the commercial intelligence in, run their own discovery with actual users, and build from the intersection of the two. Products built primarily on what the CRO is hearing win the first contract and lose the renewal.</div>
-
-    <h3>Chief Marketing Officer</h3>
-
-    <p>In a B2B scaling company, marketing operates on long sales cycles, account-based relationships, and broker or intermediary networks. The CMO's primary job is building pipeline credibility and supporting the commercial relationship — not consumer campaigns. That context changes how marketing and product should work together.</p>
-
-    <p>The most valuable thing the CMO brings to product is market intelligence: what is resonating in conversations with prospects, which objections keep appearing, what competitors are doing, how the brand is perceived by the decision-makers who actually buy. In B2B, this intelligence is rich and specific — and it rarely makes its way into product discovery systematically.</p>
-
-    <p>The PM and CMO should be working closely on go-to-market sequencing for new capabilities: not as a handoff ("product builds, marketing announces") but as a joint process. In enterprise B2B, how a new feature is positioned to a CFO or procurement team is as important as what it does. Marketing insight should be shaping what gets built. Product insight should be sharpening how it is sold and communicated.</p>
-
-    <p>The CMO is also a key voice in understanding the buyer journey — which is often long, multi-stakeholder, and disconnected from the user journey. The person who buys the product is frequently not the person who uses it. Squads that ignore this distinction build things that users love but buyers do not fund. The CMO helps close that gap.</p>
-
-    <p>The CMO does not own launch timelines or roadmap sequencing. They are a key input into discovery and a co-owner of the go-to-market plan for each significant release.</p>
-
-    <h3>Chief Operating Officer</h3>
-
-    <p>In financial services and insurance, the COO typically owns operations, process, and often compliance. Squads focused on improving internal processes, reducing operational friction, or automating manual activity are directly serving COO goals.</p>
-
-    <p>The COO is often the primary stakeholder for the platform squads — cloud infrastructure, data, and tooling decisions that affect how the whole business runs. They are also frequently the source of the compliance and governance requirements that the champion layer navigates.</p>
-
-    <p>The COO should be an outcome sponsor, not a change requester. The shift is from raising a change request through a traditional project process to working with the PM to define the outcome: "we need to reduce manual processing time by 40%" rather than "we need to build this specific workflow." The squad works out the how.</p>
-
-    <h3>Chief Technology Officer</h3>
-
-    <p>In a scaling company, the CTO is often deeply technical and directly involved in engineering decisions. They typically own the platform squads and set the engineering standards — hiring, architecture, tooling — that all squads operate within.</p>
-
-    <p>The CTO and CPO relationship is the most structurally important in the model. The CTO owns how the product is built. The CPO owns what gets built and why. Those two functions need to be tightly aligned and deeply collaborative.</p>
-
-    <p>The CTO should not be directing sprint content or backlog priorities for stream-aligned squads. Their influence on squads runs through the Engineering Leads they have hired and the standards they have set. The stream-aligned squad's Engineering Lead is the CTO's technical proxy inside the squad — accountable to the squad's PM for delivery, and accountable to the CTO for technical quality.</p>
-
-    <h3>The leadership contract</h3>
-
-    <p>The model only works if the C-suite agrees to a different type of involvement. More influence earlier — in outcome-setting, strategy, and discovery — and less influence later, once the squad is executing.</p>
-
-    <table class="article-table">
-      <thead><tr><th>What changes for the C-suite</th><th>Old model</th><th>Product model</th></tr></thead>
-      <tbody>
-        <tr><td>How they influence product</td><td>Raise feature requests, attend roadmap reviews</td><td>Set outcome goals, share intelligence, review metrics</td></tr>
-        <tr><td>When they get involved</td><td>At delivery (reviewing what was built)</td><td>At discovery (shaping what problem to solve)</td></tr>
-        <tr><td>What they are accountable for</td><td>Project milestones</td><td>Business outcomes</td></tr>
-        <tr><td>How they measure the product team</td><td>Velocity, features shipped</td><td>Outcome metrics moved</td></tr>
-      </tbody>
-    </table>
-
-    <p>This is a harder ask for executives who are used to having direct influence over what gets built. The payoff is that squads move faster, make better decisions, and deliver outcomes that actually move the business — because they were given the problem to solve rather than the solution to build.</p>
-
-    <hr class="rule">
-
-    <h2>What the structure looks like</h2>
-
-    <p>Drawn together, the model has three layers. Outcome squads at the top, owning results and running continuously. Platform and enabling squads beneath, serving the outcome squads. A thin champion layer that navigates institutional complexity without creating dependencies.</p>
-
-    <p>The key visual principles for this model:</p>
-
-    <ul class="principles-list">
-      <li><span class="inline-label">Outcome squads sit at the top.</span> They are the primary value-creating unit, not execution units within a governance framework.</li>
-      <li><span class="inline-label">Platform and data squads sit below, serving upward.</span> The flow of service goes from platform to outcome squads, not from governance downward.</li>
-      <li><span class="inline-label">The champion layer is thin and sits to the side, not above.</span> It guides, it does not gate.</li>
-      <li><span class="inline-label">Agile governance roles do not appear in this model.</span> Prioritisation lives with the PM, delivery lives with the Engineering Lead, the team self-organises.</li>
-      <li><span class="inline-label">Enabling capabilities (cloud, AI, data) are named as platform squads</span> with a service relationship to outcome squads, not as a separate approval layer.</li>
-    </ul>
-
-    <hr class="rule">
-
-    <h2>Applying this in practice</h2>
-
-    <p>The most common mistake when making this transition is starting with the org chart. Structure follows strategy, not the other way around. Before drawing any boxes, I work through three questions with the leadership team:</p>
-
-    <p><span class="inline-label">1. What are you actually trying to change?</span> Not what you are building — what business result do you need to move? Name the outcomes before naming the teams.</p>
-
-    <p><span class="inline-label">2. Who owns each outcome today?</span> If you cannot point to a specific person who is accountable for a specific metric, you do not have product thinking yet — you have delivery thinking.</p>
-
-    <p><span class="inline-label">3. What are your teams dependent on that they should not be?</span> Every dependency on another team is a constraint on speed and autonomy. Map them, then design them out.</p>
-
-    <p>Most leaders who commission this kind of transformation expect meaningful change within a quarter. The structure can change that fast. The culture cannot.</p>
-
-    <p>There are two routes to cultural change and both have real costs. The fast route is significant hiring and replacing — bringing in people who already work the way you need the organisation to work, and moving out people who will not or cannot change. It produces faster results but it is expensive, disruptive, and frequently destroys exactly the institutional knowledge and trust you were trying to build on. Done carelessly, it signals to everyone who remains that no job is safe, and the safest response to that signal is to look busy rather than take risks. That is the opposite of the culture you are trying to build.</p>
-
-    <p>The slower route is coaching and development — being honest with your people about what the new model requires, giving them a genuine chance to grow into it, and investing in the ones who can. This takes longer and requires patience that most growth environments do not naturally have. But it preserves continuity and produces advocates: people who have made the shift themselves and can help the rest of the organisation do the same.</p>
-
-    <p>In practice, most transformations need both. The skill is in making the distinction early: who can genuinely make this change, and who cannot? But the more important question for any CPO is alignment — with the CEO and board on pace, timeline, and the trade-offs of whichever path is chosen. Every CPO has a natural instinct: toward investing in people or toward moving fast and replacing. Getting that clarity early, and being honest about what each approach will cost, is as important as getting the model right.</p>
-
-    <hr class="rule">
-
-    <h2>The principles I always come back to</h2>
-
-    <ul class="principles-list">
-      <li><span class="inline-label">Outcomes before structure.</span> Name what you are trying to change in the world. Then design the structure to own it. Never start with the org chart.</li>
-      <li><span class="inline-label">Outcome squads on a shared platform.</span> Stream-aligned squads own the results. Platform squads make it possible. The flow is upward — platform serves outcomes, not the other way round.</li>
-      <li><span class="inline-label">Every role in a squad owns something.</span> If a role exists primarily to coordinate between people who have knowledge, it is a handoff. Handoffs slow everything down and dilute accountability.</li>
-      <li><span class="inline-label">Real autonomy within real alignment.</span> The organisation sets the outcome metrics and the strategic direction. The squad decides how to get there. Dictating the how turns product teams back into delivery teams.</li>
-      <li><span class="inline-label">Champions navigate. Squads execute.</span> Institutional knowledge and governance expertise belong in a thin expert layer. The doing belongs in the squads.</li>
-      <li><span class="inline-label">Engineering practices are not optional.</span> Continuous delivery, automated testing, and small frequent releases are not engineering preferences. They are the foundation the product model sits on.</li>
-      <li><span class="inline-label">Small, stable teams beat perfect org charts.</span> Five to seven people who have worked together long enough to trust each other will outperform a theoretically perfect structure that keeps reshuffling. Stability is a feature.</li>
-    </ul>
-
-    <p>These principles do not change much across organisations. What changes is how far from them each organisation has drifted, and what it will take to close the gap. If you are working through this transition — or wondering whether you need to — I am happy to have that conversation.</p>
+    <p>The framework gives you the model. What it cannot do is clear the path. In practice, there are obstacles — some structural, some cultural, some commercial — that get in the way of even the most well-designed transition. Seeing them clearly is half the work. Getting over them is the other half. Part 2 works through the ones I encounter most often.</p>
 
   </div>
 
@@ -562,7 +509,7 @@
     <div class="next-label">Read next</div>
     <a href="factory-essay.html" class="next-link">
       <span class="next-tag">Operating Model</span>
-      <span class="next-title">The build problem is solved. So what are we doing?</span>
+      <span class="next-title">We swapped the motor but nobody redesigned the factory</span>
       <span class="next-arrow">→</span>
     </a>
   </div>
