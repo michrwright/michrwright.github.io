@@ -1,23 +1,8 @@
 [
   {
-    "slug": "restructuring-for-outcomes",
-    "title": "Restructuring for outcomes: the operating model transformation",
-    "category": "Operating Model",
-    "date": "February 2026",
-    "date_short": "Feb 2026",
-    "excerpt": "Most organisations that say they want to be product-led have renamed their teams but not changed their thinking. This is a framework for making the transformation actually work — from squad design and outcome ownership to C-suite alignment.",
-    "lead": "Product-led is not a team design. It is an operating model — and making it work requires the whole organisation to change, not just the product team.",
-    "lead_sub": "A framework for the transformation, from first principles to the leadership contract that makes it stick.",
-    "read_time": 16,
-    "status": "published",
-    "next_slug": "factory-essay",
-    "next_category": "AI & Product",
-    "next_title": "The build problem is solved. So what are we doing?"
-  },
-  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
-    "category": "AI & Product",
+    "category": "Operating Model",
     "date": "April 2026",
     "date_short": "Apr 2026",
     "excerpt": "93% of developers use AI coding tools. Team productivity has improved 10%. The bottleneck was never the build — and the operating model still hasn't caught up.",
@@ -45,6 +30,21 @@
     "next_title": "The build problem is solved. Product thinking is the new moat."
   },
   {
+    "slug": "series-c-series-a",
+    "title": "You raised a Series C. Your product team is still operating at Series A.",
+    "category": "Operating Model",
+    "date": "March 2026",
+    "date_short": "Mar 2026",
+    "excerpt": "The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.",
+    "lead": "I walked into a company and was given a list of commitments already made to the board. When I sat with the team delivering them, two things became clear: they weren't sure what they'd committed to, and nobody had defined what success looked like.",
+    "lead_sub": "The scaling crack that almost nobody names before it breaks.",
+    "read_time": 11,
+    "status": "published",
+    "next_slug": "restructuring-for-outcomes",
+    "next_category": "Operating Model",
+    "next_title": "Restructuring for outcomes: the operating model transformation"
+  },
+  {
     "slug": "build-problem",
     "title": "The build problem is solved. Product thinking is the new moat.",
     "category": "AI & Product",
@@ -56,22 +56,22 @@
     "read_time": 7,
     "status": "published",
     "next_slug": "series-c-series-a",
-    "next_category": "Product Strategy",
+    "next_category": "Operating Model",
     "next_title": "You raised a Series C. Your product team is still operating at Series A."
   },
   {
-    "slug": "series-c-series-a",
-    "title": "You raised a Series C. Your product team is still operating at Series A.",
-    "category": "Product Strategy",
-    "date": "March 2026",
-    "date_short": "Mar 2026",
-    "excerpt": "The scaling crack that almost nobody names before it breaks — and the five transitions that separate Series A operating habits from Series C expectations.",
-    "lead": "I walked into a company and was given a list of commitments already made to the board. When I sat with the team delivering them, two things became clear: they weren't sure what they'd committed to, and nobody had defined what success looked like.",
-    "lead_sub": "The scaling crack that almost nobody names before it breaks.",
-    "read_time": 11,
+    "slug": "restructuring-for-outcomes",
+    "title": "Restructuring for outcomes: the operating model transformation",
+    "category": "Operating Model",
+    "date": "February 2026",
+    "date_short": "Feb 2026",
+    "excerpt": "Most organisations that say they want to be product-led have renamed their teams but not changed their thinking. This is a framework for making the transformation actually work — from squad design and outcome ownership to C-suite alignment.",
+    "lead": "Product-led is not a team design. It is an operating model — and making it work requires the whole organisation to change, not just the product team.",
+    "lead_sub": "A framework for the transformation, from first principles to the leadership contract that makes it stick.",
+    "read_time": 16,
     "status": "published",
     "next_slug": "factory-essay",
-    "next_category": "AI & Product",
+    "next_category": "Operating Model",
     "next_title": "We swapped the motor but nobody redesigned the factory"
   }
 ]
