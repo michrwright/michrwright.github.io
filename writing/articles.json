@@ -1,5 +1,20 @@
 [
   {
+    "slug": "restructuring-outcomes-part-2",
+    "title": "Restructuring for outcomes: part two — when the road gets rough",
+    "category": "Operating Model",
+    "date": "April 2026",
+    "date_short": "Apr 2026",
+    "excerpt": "The model is only as good as your ability to navigate what gets in the way. Nine failure modes that appear in almost every product transformation, in variations of the same pattern.",
+    "lead": "Part one covered the model — what the structure should look like and why. This part is about what gets in the way.",
+    "lead_sub": "Part two of three: nine failure modes that appear in almost every product transformation.",
+    "read_time": 8,
+    "status": "published",
+    "next_slug": "factory-essay",
+    "next_category": "Operating Model",
+    "next_title": "We swapped the motor but nobody redesigned the factory"
+  },
+  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
     "category": "Operating Model",

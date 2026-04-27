@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QFN6VKW2MQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QFN6VKW2MQ');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restructuring for outcomes: part two — when the road gets rough — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+  body {
+    background: #EDE9E0;
+    color: #2E2E2E;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(12,12,11,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .site-header, .header-link, .meta-tag, .meta-date, .article-body h3,
+  .function-block h3, .byline-role, .footer-copy, .footer-cta,
+  .article-lead-sub, .pull-stat-label, .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    padding: 20px 48px;
+    border-bottom: 1px solid rgba(237,233,224,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12,12,11,0.88);
+    backdrop-filter: blur(16px);
+  }
+  .wordmark {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #EDE9E0;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark-sub {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #C4A96A; margin-top: 3px;
+  }
+  .header-link {
+    font-size: 13px; color: rgba(237,233,224,0.6);
+    text-decoration: none; letter-spacing: 0.02em; transition: color 150ms;
+  }
+  .header-link:hover { color: #EDE9E0; }
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: #C4A96A; color: #0C0C0B; padding: 9px 18px;
+    border-radius: 8px; text-decoration: none; transition: opacity 150ms;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  .article-wrap {
+    max-width: 700px; margin: 0 auto;
+    padding: 80px 40px 120px; position: relative; z-index: 1;
+  }
+
+  .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+  .meta-tag {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8C6A2A;
+    background: rgba(140,106,42,0.1); border: 1px solid rgba(140,106,42,0.2);
+    padding: 4px 10px; border-radius: 8px;
+  }
+  .meta-date { font-size: 12px; color: #8C8C8C; }
+  .meta-read { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
+
+  h1.article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 48px; font-weight: 400; line-height: 1.08;
+    letter-spacing: -0.02em; color: #2E2E2E; margin-bottom: 32px; text-wrap: pretty;
+  }
+
+  .article-lead {
+    font-size: 20px; font-weight: 300; line-height: 1.6;
+    font-family: 'Nunito', sans-serif; color: #2E2E2E; margin-bottom: 20px; text-wrap: pretty;
+  }
+  .article-lead-sub {
+    font-size: 16px; line-height: 1.65; color: #8C8C8C; margin-bottom: 48px; font-style: italic;
+  }
+
+  .rule { border: none; border-top: 1px solid #D9D4C8; margin: 48px 0; }
+  .rule-olive { border: none; border-top: 2px solid #8C6A2A; width: 40px; margin: 48px 0; opacity: 0.6; }
+
+  .article-body p {
+    font-size: 17px; font-weight: 300; line-height: 1.8;
+    color: #2E2E2E; margin-bottom: 24px; text-wrap: pretty;
+  }
+  .article-body h2 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px; font-weight: 400; line-height: 1.2; color: #2E2E2E;
+    margin: 56px 0 20px; letter-spacing: -0.01em; text-wrap: pretty;
+  }
+  .article-body h3 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #8C6A2A; margin: 40px 0 12px;
+  }
+
+  .pull-stat { border-left: 2px solid #5B6335; padding: 4px 0 4px 24px; margin: 36px 0; }
+  .pull-stat-num {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 40px; color: #2E2E2E; line-height: 1; margin-bottom: 6px;
+  }
+  .pull-stat-label { font-size: 14px; color: #8C8C8C; line-height: 1.5; }
+
+  .pullquote {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px; font-style: italic; line-height: 1.55; color: #2E2E2E;
+    padding: 0 0 0 32px; border-left: 2px solid #D9D4C8; margin: 44px 0; text-wrap: pretty;
+  }
+
+  .function-block {
+    background: rgba(140,106,42,0.06); border-top: 2px solid #5B6335;
+    padding: 28px 32px; margin: 12px 0;
+  }
+  .function-block h3 {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #8C6A2A; margin: 0 0 10px;
+  }
+  .function-block p { font-size: 15px; font-weight: 300; line-height: 1.7; color: #2E2E2E; margin: 0; text-wrap: pretty; }
+  .function-block p + p { margin-top: 12px; }
+
+  .byline {
+    margin-top: 72px; padding-top: 32px; border-top: 1px solid #D9D4C8;
+    display: flex; gap: 20px; align-items: center;
+  }
+  .byline-avatar { width: 56px; height: 56px; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+  .byline-avatar img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+  }
+  .byline-name { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 17px; color: #2E2E2E; margin-bottom: 3px; }
+  .byline-role { font-size: 12px; color: #8C8C8C; letter-spacing: 0.02em; }
+
+  .article-share { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(46,46,46,0.12); display: flex; align-items: center; gap: 16px; }
+  .share-label { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(46,46,46,0.4); }
+  .share-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: #0A66C2; text-decoration: none; border: 1px solid rgba(10,102,194,0.3); padding: 7px 14px; border-radius: 8px; transition: all 150ms; }
+  .share-btn:hover { background: rgba(10,102,194,0.07); }
+
+  .next-article { background: #F5F1E8; border-top: 1px solid rgba(46,46,46,0.1); }
+  .next-inner { max-width: 700px; margin: 0 auto; padding: 48px 40px; }
+  .next-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #8C6A2A; margin-bottom: 16px; opacity: 0.8; }
+  .next-link { display: flex; align-items: center; gap: 24px; text-decoration: none; }
+  .next-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8C6A2A; background: rgba(140,106,42,0.1); border: 1px solid rgba(140,106,42,0.2); padding: 3px 9px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+  .next-title { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 22px; font-weight: 400; line-height: 1.2; color: #2E2E2E; flex: 1; transition: color 200ms; }
+  .next-arrow { font-size: 20px; color: #8C6A2A; flex-shrink: 0; transition: transform 150ms; }
+  .next-link:hover .next-title { color: #8C6A2A; }
+  .next-link:hover .next-arrow { transform: translateX(4px); }
+
+  .site-footer { display: block; padding: 48px; background: #080807; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+  .footer-wordmark { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 19px; color: #EDE9E0; }
+  .footer-mark { width: 28px; height: 1px; background: #C4A96A; margin: 10px 0; opacity: 0.5; }
+  .footer-role { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A96A; }
+  .footer-tagline { font-size: 13px; font-weight: 300; color: rgba(237,233,224,0.35); max-width: 280px; line-height: 1.6; margin-top: 18px; }
+  .footer-nav { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .footer-nav a { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(237,233,224,0.35); text-decoration: none; transition: color 150ms; }
+  .footer-nav a:hover { color: #EDE9E0; }
+  .footer-divider { border: none; border-top: 1px solid rgba(237,233,224,0.05); margin: 0 0 28px; }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(237,233,224,0.18); }
+
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: #C4A96A; width: 0%; z-index: 200; transition: width 80ms linear; pointer-events: none; }
+  .article-back { margin-bottom: 28px; }
+  .back-link { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: rgba(46,46,46,0.4); text-decoration: none; transition: color 150ms; }
+  .back-link:hover { color: #8C6A2A; }
+
+  .burger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; position: relative; z-index: 101; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: #EDE9E0; border-radius: 2px; transition: all 250ms ease; }
+  .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(12,12,11,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 400; color: rgba(237,233,224,0.6); text-decoration: none; transition: color 150ms; }
+  .mobile-menu a:hover { color: #EDE9E0; }
+  .mobile-menu .mobile-cta { font-size: 16px; font-weight: 500; background: #C4A96A; color: #0C0C0B; padding: 14px 36px; border-radius: 8px; margin-top: 8px; }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 24px; }
+    .site-header nav { display: none !important; }
+    .burger { display: flex; }
+    .article-wrap { padding: 48px 24px 80px; }
+    h1.article-title { font-size: 34px; }
+    .article-lead { font-size: 18px; }
+    .pullquote { font-size: 20px; padding-left: 20px; }
+    .pull-stat-num { font-size: 32px; }
+    .function-block { padding: 20px 20px; }
+    .site-footer { padding: 32px 24px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-nav { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 16px; }
+    .next-inner { padding: 36px 24px; }
+    .next-link { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .next-title { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<header class="site-header">
+  <div>
+    <a href="../index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav style="display:flex;gap:28px;align-items:center;">
+    <a href="../index.html#services" class="header-link">Services</a>
+    <a href="../index.html#about" class="header-link">About</a>
+    <a href="index.html" class="header-link">Writing</a>
+    <a href="../contact.html" class="nav-cta">Get in touch</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#services">Services</a>
+  <a href="../index.html#about">About</a>
+  <a href="index.html">Writing</a>
+  <a href="../contact.html" class="mobile-cta">Get in touch</a>
+</div>
+
+<main class="article-wrap">
+
+  <div class="article-back"><a href="index.html" class="back-link">← All articles</a></div>
+
+  <div class="article-meta">
+    <span class="meta-tag">Operating Model</span>
+    <span class="meta-date">April 2026</span>
+    <span class="meta-read">8 min read</span>
+  </div>
+
+  <h1 class="article-title">Restructuring for outcomes: part two — when the road gets rough</h1>
+
+  <p class="article-lead">Part one covered the model — what the structure should look like and why. This part is about what gets in the way.</p>
+  <p class="article-lead-sub">Part two of three: nine failure modes that appear in almost every product transformation.</p>
+
+  <hr class="rule-olive">
+
+  <div class="article-body">
+
+
+<hr class="rule-olive">
+
+<p>The failure modes below are not theoretical. They appear in almost every product transformation, in variations of the same pattern. Knowing the model is not enough if you do not know where it breaks.</p>
+
+<p>The model has three layers. Revenue squads at the top, owning results and running continuously. Platform and data squads beneath, serving the revenue squads. A thin champion layer that navigates institutional complexity without creating dependencies.</p>
+
+<p>If you have done that work — named your outcomes, identified who owns what, mapped the dependencies — you have the foundation. What follows assumes you have, and covers what gets in the way even when you are trying to do this right.</p>
+
+<hr class="rule">
+
+<h3>1. Investor pressure creates feature factories</h3>
+
+<p>PE and VC-backed companies operate under quarterly board reporting cycles. The pull is always toward showing tangible progress — features shipped, integrations launched, roadmap milestones hit. This is the opposite of what outcome-led squads need to do, which is to run experiments, learn, and sometimes stop building things that are not working.</p>
+
+<p>The result is that roadmaps get shaped by what looks impressive in a board deck rather than what moves a user outcome. Squads feel pressure to ship constantly. Discovery gets squeezed. The product team becomes a delivery function with good branding.</p>
+
+<p>The CPO's job is to translate outcome metrics into investor language — and to hold the line when the board asks for features rather than results. This requires building a measurement framework that shows outcomes moving, not just velocity. "We reduced time-to-approval by 23%" is a board metric. "We shipped four features in Q2" is not.</p>
+
+<hr class="rule">
+
+<h3>2. Commercial commitments create a shadow backlog</h3>
+
+<p>In B2B fintech, the sales team closes deals on promises. "Yes, we can build that" lands the contract — and with it, real revenue. Those commitments then arrive in the product team's lap as urgent priorities with customer names and contract values attached. The stakes make them almost impossible to deprioritise. Pushing back feels like threatening the deal. Saying yes means disrupting every squad working on something else. The product team learns quickly that the real backlog lives in the CRM, not the product tool — and that whoever controls the CRM controls the roadmap.</p>
+
+<p>This is one of the hardest patterns to break because it requires the CRO and CPO to agree on a joint process before it becomes a crisis. The fix is a commercial input process: sales can surface customer needs, but the PM decides whether and how to address them. A committed product roadmap with a clear intake process for commercial requests — rather than a free-for-all — protects squad focus without shutting out market intelligence.</p>
+
+<hr class="rule">
+
+<h3>3. Compliance is treated as a gate, not a design input</h3>
+
+<p>Fintech teams routinely build first and get compliance approval second. The result is rework, delayed releases, and a compliance team that is chronically reactive and chronically blamed. In regulated financial services, this pattern is particularly damaging because the compliance requirements are not edge cases — they are fundamental to what the product can and cannot do.</p>
+
+<p>The fix is to treat compliance as a first-class voice in discovery, not a final checkpoint before launch. The governance and compliance navigator in the champion layer is not there to review finished work. They are there to inform the squad's constraints before a line of code is written. A product that is designed with regulatory requirements built in from the start ships faster and fails less often than one that retrofits compliance after the fact.</p>
+
+<hr class="rule">
+
+<h3>4. Agile is confused with product-led</h3>
+
+<p>Many fintechs went through an agile transformation three to five years ago. They have Jira, two-week sprints, daily standups, and retrospectives. They believe they are already product-led because they are agile.</p>
+
+<p>Agile is a delivery methodology. Product-led is a philosophy about how decisions are made and who owns outcomes. You can run perfect sprints and still be a feature factory. The ceremonies are not the culture. The question is not "are we doing agile?" but "who decides what we build and based on what evidence?" If the answer is "whoever has the most seniority in the room," the agile ceremonies are decorative.</p>
+
+<p>The agile delivery manager role is where this confusion becomes most visible. In theory, the delivery manager exists to remove blockers and keep the team moving. In practice, they often become a coordination layer between the people who have the knowledge and the people who have made the decisions — which is precisely the handoff structure that product-led is trying to eliminate. Marty Cagan has been consistently critical of this role, and for good reason: when a team needs a delivery manager to function, it is usually a sign that the PM does not own the outcome and the engineering lead does not own the delivery. The delivery manager is filling a gap that should not exist.</p>
+
+<p>In a genuinely empowered team, the PM owns what gets built and why. The engineering lead owns how and when. The team self-organises around that. There is no coordination role because there is nothing to coordinate between — the knowledge and the decision-making authority sit with the same people. If you have delivery managers whose primary job is to run the ceremonies and manage the process, you have built a team that is agile in method and waterfall in trust.</p>
+
+<hr class="rule">
+
+<h3>5. Data infrastructure is treated as a later problem</h3>
+
+<p>Scaling fintechs frequently defer investment in data infrastructure. When outcome-led squads stand up, the first thing every PM discovers is that they cannot measure whether their outcome metric is moving, because the data does not exist or is not reliable.</p>
+
+<p>This problem has two layers, and both need fixing.</p>
+
+<p>The first is product instrumentation — feature usage, where users drop off, session behaviour, CSAT, NPS. If the tracking was never built in, the PM is flying blind on whether the product is actually being used the way it was intended. This is fixable with investment in analytics tooling and engineering time, but it requires someone to prioritise it before the squad needs it, not after.</p>
+
+<p>The second is operational and business data — and in fintech, this is usually the harder problem. The outcome metric for a revenue squad might be "reduce time-to-decision on loan applications" or "increase straight-through processing rate." That data sits in core banking systems, CRMs, and operational ledgers that were never designed to be queried in real time. It is fragmented across systems with no reliable join. Leadership is often genuinely surprised: "surely we have that data?" The answer is frequently: the data exists somewhere, but not in a form anyone can act on.</p>
+
+<p>This creates a choice between paralysis (refusing to commit to outcomes until data is ready) and false precision (using proxy metrics that do not actually reflect the outcome). Neither is good. The data and analytics squad needs to be standing up at the same time as the outcome squads, not six months later. Instrumentation and measurement are not a phase two activity. They are a prerequisite for the model to work.</p>
+
+<hr class="rule">
+
+<h3>6. Tech debt caps squad velocity before it starts</h3>
+
+<p>Most companies that have grown quickly have a history of moving fast to reach early revenue milestones. The platform that resulted is fragile — monolithic architecture, limited test coverage, manual deployment processes, tightly coupled systems. When you introduce outcome squads and ask them to ship frequently and learn fast, they immediately hit this debt.</p>
+
+<p>The instinct is to hire more engineers. The right answer is to invest in platform health as a structural prerequisite to squad autonomy. The platform squad's first job is often not to add new capabilities but to make it safe and fast to deploy.</p>
+
+<p>This is where CI/CD becomes critical. Continuous Integration and Continuous Deployment means every code change is automatically tested and deployed through a pipeline — small releases, frequent, low risk. Without it, squads are back to large infrequent releases that need manual sign-off, UAT cycles, and release managers. The ceremonies of the old model creep back in, not because anyone wanted them, but because the engineering foundation cannot support anything else. Investing in the pipeline is not an engineering preference. It is what makes squad autonomy real rather than theoretical.</p>
+
+<hr class="rule">
+
+<h3>7. Decision rights are never clarified</h3>
+
+<p>In a scaling company, everyone has an opinion on the product — the CEO, the CRO, the CTO, investors, account managers, support teams. In the early stage, this worked because everyone was close to the customer and decisions were fast. As the company scales, the proximity fades but the habit of everyone directing the product continues.</p>
+
+<p>The transition to product-led requires agreeing on two things explicitly: what the PM can decide alone, and what requires a senior voice. Everything else flows from that. A RACI chart will not do it — RACIs get made and ignored. What works is behavioral clarity: the PM decides what to test, how to run discovery, and sprint priorities within their outcome mandate. Escalation is reserved for changes to the mandate itself — new capabilities outside the current scope, shifts to the outcome metric, significant budget implications.</p>
+
+<p>The way to know if this is working is to look backwards, not forwards. At the end of a quarter, count where decisions actually landed. How many were made by the PM without escalation? How many were pulled up to the CRO or CEO? How many were reversed after the fact by a senior voice? If everything is escalating, the PM does not have real authority. If nothing is escalating, either the mandate is too narrow or nobody is paying attention. The right pattern is a PM who surprises stakeholders occasionally — not because they went rogue, but because they were trusted to decide and did. Without this clarity, the PM spends their time in alignment meetings rather than talking to users. The loudest stakeholder wins, and the customer loses.</p>
+
+<hr class="rule">
+
+<h3>8. The people work gets avoided</h3>
+
+<p>Redesigning the org chart is relatively easy. Changing who is in which role, and whether they are the right person for a product model, is much harder — and it is the part most companies quietly skip.</p>
+
+<p>Business Analysts who are skilled at requirements capture but cannot do discovery. Project managers who cannot hold outcome accountability. Delivery managers who cannot let go of the Gantt chart. These people will reproduce the old behaviours inside the new structure. The org chart changes. The culture does not.</p>
+
+<p>This is not a criticism of individuals — most of them were hired to do exactly what they are doing, and they are good at it. The transition requires honest conversations about role evolution and, in some cases, role replacement. Avoiding those conversations in the name of kindness produces a product transformation that looks right on paper and fails in practice.</p>
+
+<hr class="rule">
+
+<h3>9. The board and CEO are not aligned on what culture change actually costs</h3>
+
+<p>There are two routes to cultural change and both have real costs. The fast route is significant hiring and replacing — bringing people in who already work the way you need the organisation to work, and moving out people who will not or cannot change. It produces faster results but it is expensive, disruptive, and frequently destroys exactly the institutional knowledge and trust you were trying to build on. The slower route is coaching and development — giving people a genuine chance to grow into the new model, investing in the ones who can. It preserves continuity but takes longer than most growth environments are willing to wait.</p>
+
+<p>Most transformations need both. But the failure mode is not choosing the wrong route — it is choosing without alignment. The CEO and board need to understand what each approach costs in time, money, and disruption before the CPO commits to a direction. When that conversation does not happen, the CPO ends up executing a change programme that the business has not actually sanctioned. The pace expectation is misaligned. The disruption comes as a surprise. The CPO is held accountable for consequences that were never discussed.</p>
+
+<p>Getting that clarity early — being honest with the CEO and board about what each path will cost and what it will take — is as important as getting the model right. The middle ground between fast and slow is not compromise. It is a deliberate choice, made with open eyes, that both sides understand and own.</p>
+
+<hr class="rule">
+
+<h2>The relationship that determines everything</h2>
+
+<p>All nine of these failure modes are easier to navigate when the CEO is genuinely aligned on what product-led means — and what it asks of the whole organisation. The board conversation, the budget model, the commercial process, the people decisions: they all run through the CEO.</p>
+
+<p>The quality of your relationship with them is the single biggest determinant of whether the transformation takes hold. Not the framework. Not the squad design. Not how well you can explain discovery to a sceptical CRO. The CPO who is closely aligned with their CEO — who has honest conversations about pace, trade-offs, and what success looks like — will navigate every one of the failure modes above more effectively than the CPO who is not.</p>
+
+<p>None of these obstacles are insurmountable. What makes the difference is not the framework — it is the conversation you have with your CEO before you start. Part 3 is that conversation.</p>
+
+
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="../uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div>
+      <div class="byline-name">Michelle Wright</div>
+      <div class="byline-role">Fractional CPO · Product transformation for regulated financial services</div>
+    </div>
+  </div>
+
+  <div class="article-share">
+    <span class="share-label">Found this useful?</span>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michellewright.me/writing/restructuring-outcomes-part-2.html" target="_blank" class="share-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Share on LinkedIn
+    </a>
+  </div>
+
+</main>
+
+<div class="next-article">
+  <div class="next-inner">
+    <div class="next-label">Read next</div>
+    <a href="factory-essay.html" class="next-link">
+      <span class="next-tag">Operating Model</span>
+      <span class="next-title">We swapped the motor but nobody redesigned the factory</span>
+      <span class="next-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-wordmark">Michelle Wright</div>
+      <div class="footer-mark"></div>
+      <div class="footer-role">Fractional CPO</div>
+      <div class="footer-tagline">Senior product leadership for regulated FinTechs that need the right thinking at the right moment.</div>
+    </div>
+    <nav class="footer-nav">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#about">About</a>
+      <a href="index.html">Writing</a>
+      <a href="../contact.html">Get in touch</a>
+      <a href="https://www.linkedin.com/in/michellereimanwright/" target="_blank">LinkedIn →</a>
+    </nav>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+</script>
+</body>
+</html>
