@@ -1,5 +1,20 @@
 [
   {
+    "slug": "restructuring-outcomes-part-3",
+    "title": "Restructuring for outcomes: part three — the leadership contract",
+    "category": "Operating Model",
+    "date": "February 2026",
+    "date_short": "Feb 2026",
+    "excerpt": "The model and the failure modes are both about the product team and what surrounds it. This part is about the layer above — the CEO sponsorship and C-suite alignment that determines whether any of it holds.",
+    "lead": "Parts 1 and 2 covered the product operating model and what to expect when the road gets rough. Both are about the product team and what surrounds it. This part is about the layer above — and why everything else stalls without it.",
+    "lead_sub": "Part three of three: CEO sponsorship, C-suite alignment, and the leadership contract.",
+    "read_time": 8,
+    "status": "published",
+    "next_slug": "build-problem",
+    "next_category": "AI & Product",
+    "next_title": "The build problem is solved. Product thinking is the new moat."
+  },
+  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
     "category": "Operating Model",
