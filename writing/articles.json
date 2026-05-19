@@ -1,5 +1,20 @@
 [
   {
+    "slug": "ai-pricing-playbook",
+    "title": "AI has broken the B2B FinTech pricing playbook. The replacement is not obvious.",
+    "category": "Product Strategy",
+    "date": "May 2026",
+    "date_short": "May 2026",
+    "excerpt": "Satya Nadella called SaaS dead in December 2024. Most people heard a technology claim. It was a commercial one, and once you see it that way, the implication for every B2B FinTech business is immediate.",
+    "lead": "AI did not just change what software can do. It broke the pricing model underneath it.",
+    "lead_sub": "SaaS was never a technology. It was always a commercial model.",
+    "read_time": 5,
+    "status": "published",
+    "next_slug": "factory-essay",
+    "next_category": "AI & Product",
+    "next_title": "We swapped the motor but nobody redesigned the factory"
+  },
+  {
     "slug": "factory-essay",
     "title": "We swapped the motor but nobody redesigned the factory",
     "category": "Operating Model",
