@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QFN6VKW2MQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QFN6VKW2MQ');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture is a commercial decision — Michelle Wright</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+  body {
+    background: #EDE9E0;
+    color: #2E2E2E;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(12,12,11,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .site-header, .header-link, .meta-tag, .meta-date, .article-body h3,
+  .function-block h3, .byline-role, .footer-copy, .footer-cta,
+  .article-lead-sub, .pull-stat-label, .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    padding: 20px 48px;
+    border-bottom: 1px solid rgba(237,233,224,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(12,12,11,0.88);
+    backdrop-filter: blur(16px);
+  }
+  .wordmark {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 17px;
+    color: #EDE9E0;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark-sub {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #C4A96A; margin-top: 3px;
+  }
+  .header-link {
+    font-size: 13px; color: rgba(237,233,224,0.6);
+    text-decoration: none; letter-spacing: 0.02em; transition: color 150ms;
+  }
+  .header-link:hover { color: #EDE9E0; }
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: #C4A96A; color: #0C0C0B; padding: 9px 18px;
+    border-radius: 8px; text-decoration: none; transition: opacity 150ms;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  .article-wrap {
+    max-width: 700px; margin: 0 auto;
+    padding: 80px 40px 120px; position: relative; z-index: 1;
+  }
+
+  .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+  .meta-tag {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8C6A2A;
+    background: rgba(140,106,42,0.1); border: 1px solid rgba(140,106,42,0.2);
+    padding: 4px 10px; border-radius: 8px;
+  }
+  .meta-date { font-size: 12px; color: #8C8C8C; }
+  .meta-read { font-family: 'DM Sans', sans-serif; font-size: 12px; color: #8C8C8C; }
+
+  h1.article-title {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 48px; font-weight: 400; line-height: 1.08;
+    letter-spacing: -0.02em; color: #2E2E2E; margin-bottom: 32px; text-wrap: pretty;
+  }
+
+  .article-lead {
+    font-size: 20px; font-weight: 300; line-height: 1.6;
+    font-family: 'Nunito', sans-serif; color: #2E2E2E; margin-bottom: 20px; text-wrap: pretty;
+  }
+  .article-lead-sub {
+    font-size: 16px; line-height: 1.65; color: #8C8C8C; margin-bottom: 48px; font-style: italic;
+  }
+
+  .rule { border: none; border-top: 1px solid #D9D4C8; margin: 48px 0; }
+  .rule-olive { border: none; border-top: 2px solid #8C6A2A; width: 40px; margin: 48px 0; opacity: 0.6; }
+
+  .article-body p {
+    font-size: 17px; font-weight: 300; line-height: 1.8;
+    color: #2E2E2E; margin-bottom: 24px; text-wrap: pretty;
+  }
+  .article-body h2 {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 28px; font-weight: 400; line-height: 1.2; color: #2E2E2E;
+    margin: 56px 0 20px; letter-spacing: -0.01em; text-wrap: pretty;
+  }
+  .article-body h3 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #8C6A2A; margin: 40px 0 12px;
+  }
+
+  .pull-stat { border-left: 2px solid #5B6335; padding: 4px 0 4px 24px; margin: 36px 0; }
+  .pull-stat-num {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 40px; color: #2E2E2E; line-height: 1; margin-bottom: 6px;
+  }
+  .pull-stat-label { font-size: 14px; color: #8C8C8C; line-height: 1.5; }
+
+  .pullquote {
+    font-family: Baskerville, 'Baskerville Old Face', Georgia, serif;
+    font-size: 24px; font-style: italic; line-height: 1.55; color: #2E2E2E;
+    padding: 0 0 0 32px; border-left: 2px solid #D9D4C8; margin: 44px 0; text-wrap: pretty;
+  }
+
+  .function-block {
+    background: rgba(140,106,42,0.06); border-top: 2px solid #5B6335;
+    padding: 28px 32px; margin: 12px 0;
+  }
+  .function-block h3 {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #8C6A2A; margin: 0 0 10px;
+  }
+  .function-block p { font-size: 15px; font-weight: 300; line-height: 1.7; color: #2E2E2E; margin: 0; text-wrap: pretty; }
+  .function-block p + p { margin-top: 12px; }
+
+  .byline {
+    margin-top: 72px; padding-top: 32px; border-top: 1px solid #D9D4C8;
+    display: flex; gap: 20px; align-items: center;
+  }
+  .byline-avatar { width: 56px; height: 56px; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+  .byline-avatar img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: grayscale(100%) contrast(1.05) brightness(0.95);
+  }
+  .byline-name { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 17px; color: #2E2E2E; margin-bottom: 3px; }
+  .byline-role { font-size: 12px; color: #8C8C8C; letter-spacing: 0.02em; }
+
+  .article-share { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(46,46,46,0.12); display: flex; align-items: center; gap: 16px; }
+  .share-label { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(46,46,46,0.4); }
+  .share-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: #0A66C2; text-decoration: none; border: 1px solid rgba(10,102,194,0.3); padding: 7px 14px; border-radius: 8px; transition: all 150ms; }
+  .share-btn:hover { background: rgba(10,102,194,0.07); }
+
+  .next-article { background: #F5F1E8; border-top: 1px solid rgba(46,46,46,0.1); }
+  .next-inner { max-width: 700px; margin: 0 auto; padding: 48px 40px; }
+  .next-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #8C6A2A; margin-bottom: 16px; opacity: 0.8; }
+  .next-link { display: flex; align-items: center; gap: 24px; text-decoration: none; }
+  .next-tag { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #8C6A2A; background: rgba(140,106,42,0.1); border: 1px solid rgba(140,106,42,0.2); padding: 3px 9px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+  .next-title { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 22px; font-weight: 400; line-height: 1.2; color: #2E2E2E; flex: 1; transition: color 200ms; }
+  .next-arrow { font-size: 20px; color: #8C6A2A; flex-shrink: 0; transition: transform 150ms; }
+  .next-link:hover .next-title { color: #8C6A2A; }
+  .next-link:hover .next-arrow { transform: translateX(4px); }
+
+  .site-footer { display: block; padding: 48px; background: #080807; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+  .footer-wordmark { font-family: Baskerville, 'Baskerville Old Face', Georgia, serif; font-size: 19px; color: #EDE9E0; }
+  .footer-mark { width: 28px; height: 1px; background: #C4A96A; margin: 10px 0; opacity: 0.5; }
+  .footer-role { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #C4A96A; }
+  .footer-tagline { font-size: 13px; font-weight: 300; color: rgba(237,233,224,0.35); max-width: 280px; line-height: 1.6; margin-top: 18px; }
+  .footer-nav { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .footer-nav a { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(237,233,224,0.35); text-decoration: none; transition: color 150ms; }
+  .footer-nav a:hover { color: #EDE9E0; }
+  .footer-divider { border: none; border-top: 1px solid rgba(237,233,224,0.05); margin: 0 0 28px; }
+  .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(237,233,224,0.18); }
+
+  .progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: #C4A96A; width: 0%; z-index: 200; transition: width 80ms linear; pointer-events: none; }
+  .article-back { margin-bottom: 28px; }
+  .back-link { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: rgba(46,46,46,0.4); text-decoration: none; transition: color 150ms; }
+  .back-link:hover { color: #8C6A2A; }
+
+  .burger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; position: relative; z-index: 101; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: #EDE9E0; border-radius: 2px; transition: all 250ms ease; }
+  .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(12,12,11,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 400; color: rgba(237,233,224,0.6); text-decoration: none; transition: color 150ms; }
+  .mobile-menu a:hover { color: #EDE9E0; }
+  .mobile-menu .mobile-cta { font-size: 16px; font-weight: 500; background: #C4A96A; color: #0C0C0B; padding: 14px 36px; border-radius: 8px; margin-top: 8px; }
+
+  @media (max-width: 768px) {
+    .site-header { padding: 16px 24px; }
+    .site-header nav { display: none !important; }
+    .burger { display: flex; }
+    .article-wrap { padding: 48px 24px 80px; }
+    h1.article-title { font-size: 34px; }
+    .article-lead { font-size: 18px; }
+    .pullquote { font-size: 20px; padding-left: 20px; }
+    .pull-stat-num { font-size: 32px; }
+    .function-block { padding: 20px 20px; }
+    .site-footer { padding: 32px 24px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-nav { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 16px; }
+    .next-inner { padding: 36px 24px; }
+    .next-link { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .next-title { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<header class="site-header">
+  <div>
+    <a href="../index.html" class="wordmark">Michelle Wright</a>
+    <div class="wordmark-sub">Fractional CPO</div>
+  </div>
+  <nav style="display:flex;gap:28px;align-items:center;">
+    <a href="../index.html#services" class="header-link">Services</a>
+    <a href="../index.html#about" class="header-link">About</a>
+    <a href="index.html" class="header-link">Writing</a>
+    <a href="../contact.html" class="nav-cta">Get in touch</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#services">Services</a>
+  <a href="../index.html#about">About</a>
+  <a href="index.html">Writing</a>
+  <a href="../contact.html" class="mobile-cta">Get in touch</a>
+</div>
+
+<main class="article-wrap">
+
+  <div class="article-back"><a href="index.html" class="back-link">← All articles</a></div>
+
+  <div class="article-meta">
+    <span class="meta-tag">Operating Model</span>
+    <span class="meta-date">June 2026</span>
+    <span class="meta-read">5 min read</span>
+  </div>
+
+  <h1 class="article-title">Architecture is a commercial decision</h1>
+
+  <p class="article-lead">I sat in a room of senior product leaders while someone presented on architecture. When the speaker asked who felt confident they understood the commercial implications of their own architectural choices, most hands stayed down.</p>
+  <p class="article-lead-sub">These were the people whose job is to hold the commercial picture of the product.</p>
+
+  <hr class="rule-olive">
+
+  <div class="article-body">
+
+
+<p>That gap is expensive, and almost nobody traces the cost back to where it starts.</p>
+
+<p>If your AI initiatives are moving more slowly than expected, or stalling before they scale beyond a pilot, architecture is rarely the first explanation anyone reaches for. Yet a surprising number of problems that look like execution failures (a slow team, a crowded roadmap, a stretched budget) trace back to the way the system was designed years ago, by people who made the right call with the information they had at the time. The architecture has quietly become the ceiling.</p>
+
+<p>The cost of that ceiling is rarely visible, and hard to trace back. Gartner estimates that outdated systems consume more than 75% of IT budgets at many financial institutions. That is capital that should be funding your next product capability, spent instead on standing still.</p>
+
+<hr class="rule">
+
+<h2>Why good teams miss targets</h2>
+
+<p>I have worked inside systems at both ends of this spectrum.</p>
+
+<p>At one organisation, we were shipping twice a month, at best, not because the team was slow, but because the architecture made anything faster too risky. Some parts of the product were so tightly coupled that deployment was a risk, every change required a full regression, and every new feature had to be tested by hand against every existing one, because the coupling made automation impossible.</p>
+
+<p>The decision to change should be viewed as an investment decision, one that needs a business case, an honest view of the effort involved, and commitment at leadership level. The cost of not making it: lost clients, or adjacent market revenue left on the table because you cannot move fast enough to capture it. That is a P&amp;L problem, not a technical one.</p>
+
+<p>The contrast at another organisation, ten thousand releases a year, fully automated. If a client calls to say something is not working, you fix it immediately, and you tell them to refresh the browser, because it is already live. That is not a technical achievement. That is how you build client advocacy.</p>
+
+<p>The gap between those two businesses was not talent or ambition. It was architecture. Not one decision, but a pattern of decisions made years earlier.</p>
+
+<hr class="rule">
+
+<h2>You do not need to design it. You need to challenge it intelligently.</h2>
+
+<p>There is a common anxiety among senior leaders when technical architecture comes up. They assume it is engineering territory, and that engaging with it requires technical depth. But what it requires is understanding the commercial impact of the choices, and knowing enough to ask the right questions. You need to understand what each choice costs the business.</p>
+
+<p>A few common patterns:</p>
+
+<div class="function-block"><h3>Monolith</h3><p>A monolith may be the right call early. It is fast to build, simple to understand, and easy for a small team to hold in their heads. The cost arrives at scale, when every change means testing everything, teams block each other, and deployment becomes a risk event. <strong>The impact:</strong> dates slip, competitors ship what you cannot, and the same client complaints recur for quarters because fixes take too long to land.</p></div>
+
+<div class="function-block"><h3>Modular monolith</h3><p>A modular monolith keeps a single deployable unit but draws clean boundaries between modules, so teams can work without stepping on each other. It is a pragmatic middle ground. <strong>The impact:</strong> you trade some operational simplicity for governance overhead. Hold the boundaries and you keep the autonomy. Let them erode and you are back to a monolith, with all its costs.</p></div>
+
+<div class="function-block"><h3>Microservices</h3><p>Microservices give large, mature teams real independence, each service owned, deployed and scaled on its own. The financial cost arrives earlier than most expect. You need serious engineering capability just to run the system before a single feature ships, and the cloud bill grows faster than revenue. <strong>The impact:</strong> funding operational complexity ahead of the scale that justifies it.</p></div>
+
+<p>The list is by no means exhaustive and there is no pattern that is simply "AI-ready." What matters is whether your architecture gives AI the three things it needs to move from demo to production: clean, accessible data that is not siloed; deployment fast enough to iterate on models without a full regression cycle; and services loosely coupled enough that a capability can be swapped without touching everything around it. Fail on any one and AI will dazzle in a pilot and stall in production. And the cost lands on everyone, faster than you expect.</p>
+
+<hr class="rule">
+
+<h2>Whose job is this, really?</h2>
+
+<p>In an ideal world everyone in the business thinks and speaks commercially, including about the architecture underneath it. The reality is messier, so someone has to make architecture legible in the language of revenue, margin and risk.</p>
+
+<p>That starts with the CTO. A CTO should be able to explain an architectural choice in commercial terms: what it protects, what it puts at risk, what it costs to leave alone. A CTO who can only present architecture as diagrams and vendor analysis loses the room and the budget every time.</p>
+
+<p>But it is a partnership, not a handoff. The CPO has to understand the cost and the value of these decisions well enough to stand behind the case, and is often the person best placed to make it, because turning technical capability into commercial consequence is the centre of the product job. In my experience, I was the product leader arguing to pause and break the monolith, to automate the testing and take the payback later, while the louder push in the room was to deliver, deliver, deliver! Most people assume the CTO fights for architecture and the CPO fights for features. In that room it was the other way around.</p>
+
+<div class="pullquote">Tech debt grows in every prioritisation meeting, next to the revenue feature, because nobody puts it in commercial terms.</div>
+
+<p>Bring architecture to the conversation by reframing it as the revenue at risk if a component fails, the hit to NPS as reliability slips, or the churn you are quietly absorbing by deferring the work.</p>
+
+<p>What the CEO has to do is understand that this is a commercial decision, expect the CTO and CPO to bring it to the table that way, and weigh it as one when they do.</p>
+
+<hr class="rule">
+
+<h2>This conversation is yours to lead</h2>
+
+<p>The question is not whether you are making architectural trade-offs. You are. The question is whether you are making them consciously or accidentally.</p>
+
+<p>What you should expect from the people around you is simple: a CTO who can put architecture in commercial terms, and a CPO who understands enough to challenge or back the call, and sometimes to make it for them. The two of them aligned, bringing you the trade-off as a business decision before it reaches you as a blocker.</p>
+
+<p>That is the conversation to lead, while it is still a choice and not a constraint.</p>
+
+
+  </div>
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="../uploads/linked in photo.jpeg" alt="Michelle Wright">
+    </div>
+    <div>
+      <div class="byline-name">Michelle Wright</div>
+      <div class="byline-role">Fractional CPO · Product transformation for regulated financial services</div>
+    </div>
+  </div>
+
+  <div class="article-share">
+    <span class="share-label">Found this useful?</span>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://michellewright.me/writing/architecture-commercial-decision.html" target="_blank" class="share-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Share on LinkedIn
+    </a>
+  </div>
+
+</main>
+
+<div class="next-article">
+  <div class="next-inner">
+    <div class="next-label">Read next</div>
+    <a href="ai-pricing-playbook.html" class="next-link">
+      <span class="next-tag">AI &amp; Product</span>
+      <span class="next-title">AI has broken the B2B FinTech pricing playbook. The replacement is not obvious.</span>
+      <span class="next-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-wordmark">Michelle Wright</div>
+      <div class="footer-mark"></div>
+      <div class="footer-role">Fractional CPO</div>
+      <div class="footer-tagline">Senior product leadership for regulated FinTechs that need the right thinking at the right moment.</div>
+    </div>
+    <nav class="footer-nav">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#about">About</a>
+      <a href="index.html">Writing</a>
+      <a href="../contact.html">Get in touch</a>
+      <a href="https://www.linkedin.com/in/michellereimanwright/" target="_blank">LinkedIn →</a>
+    </nav>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Michelle Wright. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+</script>
+</body>
+</html>

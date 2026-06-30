@@ -1,5 +1,20 @@
 [
   {
+    "slug": "architecture-commercial-decision",
+    "title": "Architecture is a commercial decision",
+    "category": "Operating Model",
+    "date": "June 2026",
+    "date_short": "Jun 2026",
+    "excerpt": "Architecture is treated as a technical decision. It is a commercial one. What a CEO should expect is a CTO who can explain it in those terms, and a CPO who makes sure they do.",
+    "lead": "I sat in a room of senior product leaders while someone presented on architecture. When the speaker asked who felt confident they understood the commercial implications of their own architectural choices, most hands stayed down.",
+    "lead_sub": "These were the people whose job is to hold the commercial picture of the product.",
+    "read_time": 5,
+    "status": "published",
+    "next_slug": "ai-pricing-playbook",
+    "next_category": "AI & Product",
+    "next_title": "AI has broken the B2B FinTech pricing playbook. The replacement is not obvious."
+  },
+  {
     "slug": "ai-pricing-playbook",
     "title": "AI has broken the B2B FinTech pricing playbook. The replacement is not obvious.",
     "category": "AI & Product",
