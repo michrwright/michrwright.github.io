@@ -1,5 +1,20 @@
 [
   {
+    "slug": "ai-diversity-career-inequality",
+    "title": "Diversity made the best products. AI is threatening both.",
+    "category": "AI & Product",
+    "date": "June 2026",
+    "date_short": "June 2026",
+    "excerpt": "Diverse teams built the best products. AI adoption inequality is quietly threatening the conditions that make that possible, and the people who made those teams great are the ones being left behind.",
+    "lead": "Diverse teams built the best products. AI adoption is now quietly dismantling the conditions that made that possible, and the people who made those teams great are the ones being left behind.",
+    "lead_sub": "The distilled version of a conversation with Chelsea Karaolis, co-founder of Unify, about who gets left behind as AI accelerates, and what to do about it.",
+    "read_time": 8,
+    "status": "published",
+    "next_slug": "ai-pricing-playbook",
+    "next_category": "AI & Product",
+    "next_title": "AI has broken the B2B FinTech pricing playbook. The replacement is not obvious."
+  },
+  {
     "slug": "architecture-commercial-decision",
     "title": "Architecture is a commercial decision",
     "category": "Operating Model",
