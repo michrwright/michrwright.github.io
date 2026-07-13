@@ -279,7 +279,7 @@
 
 <p>The decision to change should be viewed as an investment decision, one that needs a business case, an honest view of the effort involved, and commitment at leadership level. The cost of not making it: lost clients, or adjacent market revenue left on the table because you cannot move fast enough to capture it. That is a P&amp;L problem, not a technical one.</p>
 
-<p>The contrast at another organisation, ten thousand releases a year, fully automated. If a client calls to say something is not working, you fix it immediately, and you tell them to refresh the browser, because it is already live. That is not a technical achievement. That is how you build client advocacy.</p>
+<p>The contrast at another organisation, ten thousand releases a year, fully automated. If a client calls to say something is not working, you fix it immediately, and you tell them to refresh the browser, because it is already live. That is not a technical achievement. That is how you build client advocacy. There is a risk dimension here too, and in regulated financial services it matters as much as speed. A tightly coupled system is not just slow to change, it is a bigger blast radius when something goes wrong, and "we shipped it, just refresh your browser" only reads as a virtue if change control and audit trail were designed in alongside the speed. Otherwise it reads as a compliance gap.</p>
 
 <p>The gap between those two businesses was not talent or ambition. It was architecture. Not one decision, but a pattern of decisions made years earlier.</p>
 
@@ -296,6 +296,8 @@
 <div class="function-block"><h3>Modular monolith</h3><p>A modular monolith keeps a single deployable unit but draws clean boundaries between modules, so teams can work without stepping on each other. It is a pragmatic middle ground. <strong>The impact:</strong> you trade some operational simplicity for governance overhead. Hold the boundaries and you keep the autonomy. Let them erode and you are back to a monolith, with all its costs.</p></div>
 
 <div class="function-block"><h3>Microservices</h3><p>Microservices give large, mature teams real independence, each service owned, deployed and scaled on its own. The financial cost arrives earlier than most expect. You need serious engineering capability just to run the system before a single feature ships, and the cloud bill grows faster than revenue. <strong>The impact:</strong> funding operational complexity ahead of the scale that justifies it.</p></div>
+
+<p>None of this is really about the pattern itself. A monolith with clean internal boundaries and real test automation can scale perfectly well, plenty of very large companies run one deliberately. The failure most teams actually have is coupling and missing test discipline, and moving to microservices without fixing that just relocates the same tangled dependencies onto the network, where they are harder to see and more expensive to unpick. The pattern is not the point. The boundaries are.</p>
 
 <p>The list is by no means exhaustive and there is no pattern that is simply "AI-ready." What matters is whether your architecture gives AI the three things it needs to move from demo to production: clean, accessible data that is not siloed; deployment fast enough to iterate on models without a full regression cycle; and services loosely coupled enough that a capability can be swapped without touching everything around it. Fail on any one and AI will dazzle in a pilot and stall in production. And the cost lands on everyone, faster than you expect.</p>
 
